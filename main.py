@@ -2,6 +2,7 @@ from keys import discord_webhook, urls, keywords
 from discordwebhook import Discord
 from bs4 import BeautifulSoup
 import requests
+
 import time
 
 
@@ -11,7 +12,9 @@ def main():
 
 def check_keywords(urls: list):
     links = []
-    old_links = []
+    old_links_file = open("old_links.txt", "r")
+    old_links = old_links_file.read().split('\n')
+    old_links_file.close()
 
     for url in urls:
         response = requests.get(url)
@@ -36,7 +39,14 @@ def check_keywords(urls: list):
                         old_links.append(link)
                     break
 
-        print(links)
+
+    old_links_file = open("old_links.txt", "w")
+    for link in old_links:
+        old_links_file.write(link + "\n")
+    old_links_file.close()
+
+    print(links)
+
 
 
 def webhook_send(discord_webhook: str, message: str):

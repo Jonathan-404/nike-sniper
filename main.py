@@ -1,36 +1,41 @@
-from keys import discord_webhook
+from keys import discord_webhook, urls, keywords
 from discordwebhook import Discord
 from bs4 import BeautifulSoup
 import requests
 import time
 
 
-urls = ['https://www.jdsports.co.il/collections/nike-men-shoes-sneakers']
-keywords = ['Dunk']
-
-
 def main():
-   pass
+   check_keywords(urls)
 
 
 def check_keywords(urls: list):
-
     links = []
+    old_links = []
+
     for url in urls:
         response = requests.get(url)
         content = response.content
-
         soup = BeautifulSoup(content, 'html.parser')
         product_items = soup.find_all('div', class_='product-item-meta')
+
         for product_item in product_items:
             h2 = product_item.find('h2', class_='product-item-meta__title')
-            if h2 is not None:
-                title = h2.text.strip()
-                for keyword in keywords:
-                    if keyword in title:
-                        url_paramater = h2.get('href')
-                        links.append(f"{url}{url_paramater}")
-                        break
+
+            if h2 is None:
+                continue
+
+            title = h2.text.strip()
+
+            for keyword in keywords:
+                if keyword in title:
+                    url_paramater = h2.get('href')
+                    link = f"{url}{url_paramater}"
+                    if link not in old_links:
+                        links.append(link)
+                        old_links.append(link)
+                    break
+
         print(links)
 
 

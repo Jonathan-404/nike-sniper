@@ -19,3 +19,7 @@ def check_price(urls: list):
 def webhook_send(discord_webhook: str, message: str):
     pass
 
+
+
+if __name__ == '__main__':
+    main()

@@ -2,12 +2,11 @@ from keys import discord_webhook, urls, keywords
 from discordwebhook import Discord
 from bs4 import BeautifulSoup
 import requests
-
 import time
 
 
 def main():
-   check_keywords(urls)
+   pass
 
 
 def check_keywords(urls: list):
@@ -47,6 +46,15 @@ def check_keywords(urls: list):
 
     print(links)
 
+
+
+def check_price(url: str):
+    content = requests.get(url).content
+    soup = BeautifulSoup(content, 'html.parser')
+
+    price = soup.find('span', class_='price price--large')
+
+    return ''.join(filter(lambda x: x.isdigit() or x == '.', price.text))
 
 
 def webhook_send(discord_webhook: str, message: str):

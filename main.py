@@ -4,17 +4,15 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-
 urls = ['https://www.jdsports.co.il/collections/nike-men-shoes-sneakers']
 keywords = ['Dunk']
 
 
 def main():
-   pass
+    print(check_price('https://www.jdsports.co.il/products/jodq0560160'))
 
 
 def check_keywords(urls: list):
-
     links = []
     for url in urls:
         response = requests.get(url)
@@ -32,6 +30,15 @@ def check_keywords(urls: list):
                         links.append(f"{url}{url_paramater}")
                         break
         print(links)
+
+
+def check_price(url: str):
+    content = requests.get(url).content
+    soup = BeautifulSoup(content, 'html.parser')
+
+    price = soup.find('span', class_='price price--large')
+
+    return ''.join(filter(lambda x: x.isdigit() or x == '.', price.text))
 
 
 def webhook_send(discord_webhook: str, message: str):

@@ -1,35 +1,51 @@
-from keys import discord_webhook
+from keys import discord_webhook, urls, keywords
 from discordwebhook import Discord
 from bs4 import BeautifulSoup
 import requests
 import time
 
-urls = ['https://www.jdsports.co.il/collections/nike-men-shoes-sneakers']
-keywords = ['Dunk']
-
 
 def main():
-    print(check_price('https://www.jdsports.co.il/products/jodq0560160'))
+   pass
 
 
 def check_keywords(urls: list):
     links = []
+    old_links_file = open("old_links.txt", "r")
+    old_links = old_links_file.read().split('\n')
+    old_links_file.close()
+
     for url in urls:
         response = requests.get(url)
         content = response.content
-
         soup = BeautifulSoup(content, 'html.parser')
         product_items = soup.find_all('div', class_='product-item-meta')
+
         for product_item in product_items:
             h2 = product_item.find('h2', class_='product-item-meta__title')
-            if h2 is not None:
-                title = h2.text.strip()
-                for keyword in keywords:
-                    if keyword in title:
-                        url_paramater = h2.get('href')
-                        links.append(f"{url}{url_paramater}")
-                        break
-        print(links)
+
+            if h2 is None:
+                continue
+
+            title = h2.text.strip()
+
+            for keyword in keywords:
+                if keyword in title:
+                    url_paramater = h2.get('href')
+                    link = f"{url}{url_paramater}"
+                    if link not in old_links:
+                        links.append(link)
+                        old_links.append(link)
+                    break
+
+
+    old_links_file = open("old_links.txt", "w")
+    for link in old_links:
+        old_links_file.write(link + "\n")
+    old_links_file.close()
+
+    print(links)
+
 
 
 def check_price(url: str):

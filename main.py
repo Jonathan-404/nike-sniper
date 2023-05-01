@@ -11,7 +11,7 @@ print(jd_sports.x)
 
 
 def main():
-    scrape_product_image("https://www.jdsports.co.il/products/nicn5668101")
+    pass
 
 
 def check_keywords(urls: list, keywords: list):

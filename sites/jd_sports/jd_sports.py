@@ -1,4 +1,4 @@
-from sites.jd_sports.scarpe_functions import scrape_product_price, scrape_product_image
+from sites.jd_sports.scarpe_functions import scrape_product_price, scrape_product_image, scrape_product_sizes
 from webhook_manager import webhook_send
 from bs4 import BeautifulSoup
 import requests
@@ -29,7 +29,7 @@ def new_product_urls(url: str, keywords: list):
 
                 if product_url not in product_urls:
                     product_urls.append(product_url)
-                    webhook_send("jd_sports", product_name, product_url, scrape_product_price(product_url), "In Stock", [], scrape_product_image(product_url))
+                    webhook_send("JD Sports", product_name, product_url, scrape_product_price(product_url), "In Stock", scrape_product_sizes(product_url), scrape_product_image(product_url))
                 break
 
     product_urls_file = open("./product_urls.txt", "w")

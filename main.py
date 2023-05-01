@@ -6,46 +6,38 @@ import time
 
 
 def main():
-   pass
+    check_keywords(urls, keywords)
 
 
-def check_keywords(urls: list):
-    links = []
+def check_keywords(urls: list, keywords: list):
     old_links_file = open("old_links.txt", "r")
     old_links = old_links_file.read().split('\n')
     old_links_file.close()
 
     for url in urls:
-        response = requests.get(url)
-        content = response.content
+        content = requests.get(url).content
+
         soup = BeautifulSoup(content, 'html.parser')
         product_items = soup.find_all('div', class_='product-item-meta')
 
         for product_item in product_items:
             h2 = product_item.find('h2', class_='product-item-meta__title')
 
-            if h2 is None:
-                continue
-
             title = h2.text.strip()
 
             for keyword in keywords:
                 if keyword in title:
                     url_paramater = h2.get('href')
-                    link = f"{url}{url_paramater}"
+                    link = f"https://www.jdsports.co.il{url_paramater}"
                     if link not in old_links:
-                        links.append(link)
                         old_links.append(link)
+                        webhook_send(discord_webhook, link)
                     break
-
 
     old_links_file = open("old_links.txt", "w")
     for link in old_links:
         old_links_file.write(link + "\n")
     old_links_file.close()
-
-    print(links)
-
 
 
 def check_price(url: str):
@@ -57,7 +49,7 @@ def check_price(url: str):
     return ''.join(filter(lambda x: x.isdigit() or x == '.', price.text))
 
 
-def webhook_send(discord_webhook: str, message: str):
+def webhook_send(discord_webhook: str, product_link: str):
     webhook = Discord(url=discord_webhook)
 
     webhook.post(

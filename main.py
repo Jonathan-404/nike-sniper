@@ -11,7 +11,7 @@ print(jd_sports.x)
 
 
 def main():
-    check_keywords(urls, keywords)
+    scrape_product_image("https://www.jdsports.co.il/products/nicn5668101")
 
 
 def check_keywords(urls: list, keywords: list):
@@ -49,12 +49,16 @@ def check_keywords(urls: list, keywords: list):
     old_links_file.close()
 
 
-def check_price(url: str):
+def scrape_product_price(url: str):
     content = requests.get(url).content
     soup = BeautifulSoup(content, 'html.parser')
+    return ''.join(filter(lambda x: x.isdigit() or x == '.', soup.find('span', class_='price price--large').text))
 
-    price = soup.find('span', class_='price price--large')
-    return ''.join(filter(lambda x: x.isdigit() or x == '.', price.text))
+
+def scrape_product_image(url: str):
+    content = requests.get(url).content
+    soup = BeautifulSoup(content, 'html.parser')
+    return soup.find('div', class_='product__media-image-wrapper').find('img').get('src')[2:]
 
 
 # webhook_send(discord_webhook, "JD Sports", title, link, check_price(link), "In Stock", [], "")

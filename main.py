@@ -6,10 +6,10 @@ import time
 
 
 def main():
-   pass
+    pass
 
 
-def check_keywords(urls: list):
+def check_keywords(urls: list, keywords: list):
     links = []
     old_links_file = open("old_links.txt", "r")
     old_links = old_links_file.read().split('\n')
@@ -31,13 +31,12 @@ def check_keywords(urls: list):
 
             for keyword in keywords:
                 if keyword in title:
-                    url_paramater = h2.get('href')
-                    link = f"{url}{url_paramater}"
+                    url_parameter = h2.get('href')
+                    link = f"{url}{url_parameter}"
                     if link not in old_links:
                         links.append(link)
                         old_links.append(link)
                     break
-
 
     old_links_file = open("old_links.txt", "w")
     for link in old_links:

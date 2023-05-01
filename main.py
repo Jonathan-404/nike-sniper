@@ -4,9 +4,14 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
+# sites algorithms are imported from sites directory
+
+from sites import jd_sports
+print(jd_sports.x)
+
 
 def main():
-    pass
+    check_keywords(urls, keywords)
 
 
 def check_keywords(urls: list, keywords: list):
@@ -25,17 +30,17 @@ def check_keywords(urls: list, keywords: list):
         for product_item in product_items:
             h2 = product_item.find('h2', class_='product-item-meta__title')
 
-            title = h2.text.strip()
+            product_name = h2.text.strip()
 
             for keyword in keywords:
-                if keyword in title:
+                if keyword in product_name:
 
                     url_paramater = h2.get('href')
                     link = f"https://www.jdsports.co.il{url_paramater}"
 
                     if link not in old_links:
                         old_links.append(link)
-                        webhook_send(discord_webhook, link)
+
                     break
 
     old_links_file = open("old_links.txt", "w")
@@ -49,33 +54,32 @@ def check_price(url: str):
     soup = BeautifulSoup(content, 'html.parser')
 
     price = soup.find('span', class_='price price--large')
-
     return ''.join(filter(lambda x: x.isdigit() or x == '.', price.text))
 
 
-def webhook_send(discord_webhook: str, product_link: str):
-    webhook = Discord(url=discord_webhook)
+# webhook_send(discord_webhook, "JD Sports", title, link, check_price(link), "In Stock", [], "")
+def webhook_send(discord_webhook: str, website_name: str, product_name: str, product_link: str, product_price: str, product_status: str, product_sizes: list, product_image: str):
+    discord = Discord(url=discord_webhook)
 
-    webhook.post(
+    discord.post(
         embeds=[
             {
                 "author": {
-                    "name": "Shoes Website",
-                    "url": "https://shoes.com/",
-                    "icon_url": "https://shoes.com/",
+                    "name": website_name,
+                    "url": product_link,
+                    "icon_url": "https://picsum.photos/24/24",
                 },
-                "title": "NEW SHOE!",
-                "description": "New shoe has been released on the website!",
+                "title": "New Shoe Listed!",
+                "description": f"New shoe has been listed on {website_name}",
                 "fields": [
-                    {"name": "Price", "value": "999.0 ILS", "inline": True},
-                    {"name": "Status", "value": "In Stock", "inline": True},
-                    {"name": "Available Sizes", "value": "99, 99, 99", "inline": False},
+                    {"name": "Product Name", "value": product_name, "inline": True},
+                    {"name": "Price", "value": product_price, "inline": True},
+                    {"name": "Status", "value": product_status},
                 ],
-                "thumbnail": {"url": "https://picsum.photos/80/60"},
-                "image": {"url": "https://picsum.photos/400/300"},
+                "thumbnail": {"url": product_image},
                 "footer": {
                     "text": "Embed Footer",
-                    "icon_url": "Rights Reserved to Jonathan & Liam",
+                    "icon_url": "https://picsum.photos/20/20",
                 },
             }
         ],

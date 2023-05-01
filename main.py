@@ -6,10 +6,12 @@ import time
 
 
 def main():
-    check_keywords(urls, keywords)
+    pass
 
 
 def check_keywords(urls: list, keywords: list):
+    links = []
+
     old_links_file = open("old_links.txt", "r")
     old_links = old_links_file.read().split('\n')
     old_links_file.close()
@@ -27,8 +29,10 @@ def check_keywords(urls: list, keywords: list):
 
             for keyword in keywords:
                 if keyword in title:
+
                     url_paramater = h2.get('href')
                     link = f"https://www.jdsports.co.il{url_paramater}"
+
                     if link not in old_links:
                         old_links.append(link)
                         webhook_send(discord_webhook, link)

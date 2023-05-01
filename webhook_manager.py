@@ -25,6 +25,7 @@ def webhook_send(website_name: str, product_name: str, product_link: str, produc
                     {"name": "Product Name", "value": product_name, "inline": True},
                     {"name": "Price", "value": f"{product_price} ILS", "inline": True},
                     {"name": "Status", "value": product_status},
+                    {"name": "Sizes", "value": f"{' '.join(product_sizes)}"},
                 ],
                 "thumbnail": {"url": f"https://{product_image}"},
                 "footer": {

@@ -8,7 +8,8 @@ jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers"
 
 
 def main():
-    jd_sports.new_product_urls(jd_sports_url, keywords)
+    while True:
+        jd_sports.new_product_urls(jd_sports_url, keywords)
 
 
 if __name__ == "__main__":

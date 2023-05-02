@@ -6,12 +6,12 @@ import requests
 """
 SITE ALGORITHM STARTS HERE
 
-SITE NAME: jd_sports
+SITE NAME: JD Sports
 """
 
 
 def new_product_urls(url: str, keywords: list):
-    for i in range(13):
+    for i in range(12):
         product_urls_file = open("./product_urls.txt", "r")
         product_urls = product_urls_file.read().split('\n')
         product_urls_file.close()

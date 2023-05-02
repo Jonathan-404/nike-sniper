@@ -21,7 +21,7 @@ def scrape_product_image(url: str):
 def scrape_product_sizes(url: str):
     sizes = []
 
-    content = requests.get(url, timeout=2).content
+    content = requests.get(url).content
     soup = BeautifulSoup(content, 'html.parser')
 
     for size in json.loads(soup.find('script', type='application/ld+json').text)['offers']:

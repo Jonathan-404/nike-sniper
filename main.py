@@ -4,7 +4,7 @@ from keys import keywords
 from sites.jd_sports import jd_sports
 
 # sites urls
-jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers"
+jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers?page="
 
 
 def main():

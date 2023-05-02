@@ -4,11 +4,12 @@ from keys import keywords
 from sites.jd_sports import jd_sports
 
 # sites urls
-jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers"
+jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers?page="
 
 
 def main():
-    jd_sports.new_product_urls(jd_sports_url, keywords)
+    while True:
+        jd_sports.new_product_urls(jd_sports_url, keywords)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,9 @@
 from sites.jd_sports.scarpe_functions import scrape_product_price, scrape_product_image, scrape_product_sizes
 from webhook_manager import webhook_send
 from bs4 import BeautifulSoup
+import unicodedata
 import requests
+import json
 
 """
 SITE ALGORITHM STARTS HERE
@@ -12,9 +14,11 @@ SITE NAME: JD Sports
 
 def new_product_urls(url: str, keywords: list):
     for i in range(12):
-        product_urls_file = open("./product_urls.txt", "r")
-        product_urls = product_urls_file.read().split('\n')
-        product_urls_file.close()
+        product_urls = []
+
+        product_data_file = json.load(open("./product_data.json", "r"))
+        for product in product_data_file["jd_sports"]:
+            product_urls.append(product["product_url"])
 
         content = requests.get(url+str(i)).content
         soup = BeautifulSoup(content, 'html.parser')
@@ -26,14 +30,32 @@ def new_product_urls(url: str, keywords: list):
                 if keyword in product_name:
 
                     product_id = product_children.find('h2', class_='product-item-meta__title').get('href').split('/')[-1]
-                    product_url = f"https://www.jdsports.co.il/products/{product_id}"
+                    product_url = f"https://www.jdsports.co.il/products/{product_id}".strip()
 
-                    if product_url not in product_urls:
-                        product_urls.append(product_url.strip())
-                        webhook_send("JD Sports", product_name, product_url, scrape_product_price(product_url), "In Stock", scrape_product_sizes(product_url), scrape_product_image(product_url))
+                    # store product data in json file
+                    product_data = {
+                        "product_name": product_name,
+                        "product_url": product_url,
+                        "product_price": scrape_product_price(product_url),
+                        "product_stock": "In Stock",
+                        "product_sizes": scrape_product_sizes(product_url),
+                        "product_image": scrape_product_image(product_url)
+                    }
+
+                    if product_data["product_url"] not in product_urls:
+                        product_urls.append(product_data["product_url"])
+                        webhook_send("JD Sports", product_data["product_name"],
+                                     product_data["product_url"], product_data["product_price"],
+                                     "In Stock", product_data["product_sizes"],
+                                     product_data["product_image"])
+                        update_products_json_file("jd_sports", product_data)
+
                     break
 
-        product_urls_file = open("./product_urls.txt", "w")
-        product_urls_file.write("\n".join(product_urls))
-        product_urls_file.close()
 
+def update_products_json_file(company_name: str, product_data: dict):
+    with open("product_data.json", 'r+') as file:
+        file_data = json.load(file)
+        file_data[company_name].append(product_data)
+        file.seek(0)
+        json.dump(file_data, file, indent=4)

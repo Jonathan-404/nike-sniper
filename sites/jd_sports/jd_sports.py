@@ -29,11 +29,11 @@ def new_product_urls(url: str, keywords: list):
                     product_url = f"https://www.jdsports.co.il/products/{product_id}"
 
                     if product_url not in product_urls:
-                        product_urls.append(product_url)
+                        product_urls.append(product_url.strip())
                         webhook_send("JD Sports", product_name, product_url, scrape_product_price(product_url), "In Stock", scrape_product_sizes(product_url), scrape_product_image(product_url))
                     break
 
         product_urls_file = open("./product_urls.txt", "w")
-        for product_url in product_urls:
-            product_urls_file.write(product_url + "\n")
+        product_urls_file.write("\n".join(product_urls))
         product_urls_file.close()
+

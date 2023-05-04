@@ -7,7 +7,7 @@ from sites.terminal_x import terminal_x
 
 # sites urls
 jd_sports_url = "https://www.jdsports.co.il/collections/men-shoes-sneakers?page="
-terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes"
+terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes?p="
 
 
 def main():

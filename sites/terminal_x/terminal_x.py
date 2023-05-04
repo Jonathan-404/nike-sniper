@@ -20,7 +20,7 @@ def new_product_urls(url: str, keywords: list):
         for product in product_data_file["terminal_x"]:
             product_urls.append(product["product_url"])
 
-        content = requests.get(f"https://www.terminalx.com/men/shoes/sneakers-shoes?p={i+1}").content
+        content = requests.get(f"{url}{i+1}").content
         soup = BeautifulSoup(content, 'html.parser')
         product_parents = soup.find_all('div', class_='img-link_29yX new-listing-product_2S9n')
         for product_children in product_parents:

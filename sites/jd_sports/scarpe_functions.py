@@ -1,5 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
 import json
 
 
@@ -11,7 +9,7 @@ def scrape_product_price(product_soup):
 
 
 def scrape_product_image(product_soup):
-    return product_soup.find('div', class_='product__media-image-wrapper').find('img').get('src')[2:]
+    return f"https://{product_soup.find('div', class_='product__media-image-wrapper').find('img').get('src')[2:]}"
 
 
 def scrape_product_sizes(product_soup):

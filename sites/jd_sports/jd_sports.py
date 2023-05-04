@@ -28,8 +28,7 @@ def new_product_urls(url: str, keywords: list):
             for keyword in keywords:
                 if keyword in product_name:
 
-                    product_id = product_children.find('h2', class_='product-item-meta__title').get('href').split('/')[
-                        -1]
+                    product_id = product_children.find('h2', class_='product-item-meta__title').get('href').split('/')[-1]
                     product_url = f"https://www.jdsports.co.il/products/{product_id}".strip()
 
                     product_content = requests.get(product_url).content
@@ -47,10 +46,7 @@ def new_product_urls(url: str, keywords: list):
 
                     if product_data["product_url"] not in product_urls:
                         product_urls.append(product_data["product_url"])
-                        new_shoe_message("JD Sports", product_data["product_name"],
-                                         product_data["product_url"], product_data["product_price"],
-                                         "In Stock", product_data["product_sizes"],
-                                         product_data["product_image"])
+                        new_shoe_message("JD Sports", product_data["product_name"], product_data["product_url"], product_data["product_price"], "In Stock", product_data["product_sizes"], product_data["product_image"])
                         update_products_json_file("jd_sports", product_data)
 
                     break

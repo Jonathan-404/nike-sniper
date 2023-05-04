@@ -13,7 +13,6 @@ SITE NAME: Terminal X
 
 def new_product_urls(url: str, keywords: list):
     for i in range(14):
-        print(i+1)
         product_urls = []
 
         product_data_file = json.load(open("./product_data.json", "r"))
@@ -41,7 +40,6 @@ def new_product_urls(url: str, keywords: list):
                         "product_sizes": scrape_product_sizes(product_soup),
                         "product_image": scrape_product_image(product_soup).strip()
                     }
-                    print(product_data)
 
                     if product_data["product_url"] not in product_urls:
                         product_urls.append(product_data["product_url"])

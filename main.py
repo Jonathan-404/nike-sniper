@@ -1,3 +1,4 @@
+from multiprocessing import Process
 from keys import keywords
 import time
 
@@ -11,9 +12,14 @@ terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes?p="
 
 
 def main():
+
     while True:
-        jd_sports.new_product_urls(jd_sports_url, keywords)
-        terminal_x.new_product_urls(terminal_x_url, keywords)
+        jd_sports_process = Process(target=jd_sports.new_product_urls, args=(jd_sports_url, keywords))
+        jd_sports_process.start()
+
+        terminal_x_process = Process(target=terminal_x.new_product_urls, args=(terminal_x_url, keywords))
+        terminal_x_process.start()
+
         time.sleep(30)
 
 

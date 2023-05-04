@@ -12,5 +12,4 @@ def scrape_product_sizes(product_soup):
     for size in all_sizes:
         if size.get('data-test-id') == "qa-size-item":
             sizes.append(size.text.strip())
-            print(size.text.strip())
     return sizes

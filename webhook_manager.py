@@ -28,7 +28,7 @@ def new_shoe_message(website_name: str, product_name: str, product_link: str, pr
                     {"name": "Status", "value": product_status},
                     {"name": "Sizes", "value": f"{' '.join(product_sizes)}"},
                 ],
-                "thumbnail": {"url": f"https://{product_image}"},
+                "thumbnail": {"url": f"{product_image}"},
                 "footer": {
                     "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
                 },

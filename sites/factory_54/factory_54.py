@@ -28,7 +28,7 @@ def new_product_urls(urls: list, keywords: list):
             for product_children in product_parents:
                 # {"item_id":"850362285-m","item_category5":"850362285","item_name":"נעלי סניקרס מכותנה","item_list_id":"PLP","item_list_name":"Product List Page","item_brand":"VALENTINO GARAVANI","currency":"ILS","item_category":"גברים","item_category2":"נעליים","item_category3":"סניקרס","item_category4":"(not set)","index":"48","item_variant":"כחול","location_id":"(not set)","salePrice":2490,"price":2490}
                 #
-                product_name = f"""{json.loads(product_children.get("data-gtm-product"))["item_name"]} {json.loads(product_children.get("data-gtm-product"))["item_brand"]}"""
+                product_name = f"""{json.loads(product_children.get("data-gtm-product"))["item_name"]} {json.loads(product_children.get("data-gtm-product"))["item_brand"]} {json.loads(product_children.get("data-gtm-product"))["item_variant"]}"""
                 print(product_name)
                 """for keyword in keywords:
                     if keyword in product_name:

@@ -28,8 +28,8 @@ def new_product_urls(urls: str, keywords: list):
                 product_name = product_children.find('h2', class_='product-item-meta__title').text.strip()
                 for keyword in keywords:
                     if keyword in product_name:
+                        product_id = product_children.find('h2', class_='product-item-meta__title').find('a').get('href').split('/')[-1]
 
-                        product_id = product_children.find('h2', class_='product-item-meta__title').get('href').split('/')[-1]
                         product_url = f"https://www.jdsports.co.il/products/{product_id}".strip()
 
                         product_content = requests.get(product_url).content

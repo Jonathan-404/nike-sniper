@@ -10,7 +10,6 @@ SITE ALGORITHM STARTS HERE
 SITE NAME: Sneakerboxtlv
 """
 
-
 def new_product_urls(url: str, keywords: list):
     cookies = {"tk_or": "%22%22", "tk_r3d": "%22%22", "tk_lr": "%22%22"}
     headers = {"Sec-Ch-Ua": "\"Not:A-Brand\";v=\"99\", \"Chromium\";v=\"112\"", "Accept": "*/*",
@@ -30,19 +29,18 @@ def new_product_urls(url: str, keywords: list):
             product_urls.append(product["product_url"])
 
         data = {"action": "more_prods", "offset": f"{offset}", "productCat": "footwear", "brand": '', "gender": ''}
-        content = requests.post(url, headers=headers, cookies=cookies, data=data).content
+        content = requests.get(url, headers=headers, cookies=cookies, data=data).content
         soup = BeautifulSoup(content, 'html.parser')
-
         product_parents = soup.find_all('div')
         for product_children in product_parents:
             if "product" in product_children.get('class'):
+
                 product_name = product_children.find('a').find('div', class_='title').text.strip().replace("                                                ", " ")
                 product_url = product_children.find('a').get("href")
                 product_price = product_children.find('a').find('div', class_='price').text.strip()
-
+                print(product_name)
                 product_content = requests.get(product_url).content
                 product_soup = BeautifulSoup(product_content, 'html.parser')
-
                 # store product data in json file
                 product_data = {
                     "product_name": product_name,
@@ -60,11 +58,7 @@ def new_product_urls(url: str, keywords: list):
                                      product_data["product_price"], "In Stock", product_data["product_sizes"],
                                      product_data["product_image"])
                     update_products_json_file("sneakerboxtlv", product_data)
-                    print(scrape_product_sizes(product_soup))
         offset += 24
-
-
-
 
 
 def update_products_json_file(company_name: str, product_data: dict):
@@ -73,4 +67,5 @@ def update_products_json_file(company_name: str, product_data: dict):
         file_data[company_name].append(product_data)
         file.seek(0)
         json.dump(file_data, file, indent=4)
-new_product_urls("https://sneakerboxtlv.com/wp-admin/admin-ajax.php", ["key"])
+
+new_product_urls("https://sneakerboxtlv.com/wp-admin/admin-ajax.php", ["dunk"])

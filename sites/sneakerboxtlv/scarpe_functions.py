@@ -7,7 +7,6 @@ def scrape_product_sizes(product_soup):
 
     sizes_parent = product_soup.find_all('div', class_='option enabled')
     for size in sizes_parent:
-        print(size.text.strip())
         sizes.append(size.text.strip())
 
     return sizes

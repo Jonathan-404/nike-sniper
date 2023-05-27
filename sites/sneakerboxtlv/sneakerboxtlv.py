@@ -39,27 +39,30 @@ def new_product_urls(url: str, keywords: list):
                 product_name = product_children.find('a').find('div', class_='title').text.strip().replace("                                                ", " ")
                 product_url = product_children.find('a').get("href")
                 product_price = product_children.find('a').find('div', class_='price').text.strip()
+                for keyword in keywords:
+                    if keyword in product_name:
+                        product_content = requests.get(product_url).content
+                        product_soup = BeautifulSoup(product_content, 'html.parser')
 
-                product_content = requests.get(product_url).content
-                product_soup = BeautifulSoup(product_content, 'html.parser')
+                        # store product data in json file
+                        product_data = {
+                            "product_name": product_name,
+                            "product_url": product_url,
+                            "product_price": product_price,
+                            "product_stock": "In Stock",
+                            "product_sizes": scrape_product_sizes(product_soup),
+                            "product_image": scrape_product_image(product_soup)
+                        }
 
-                # store product data in json file
-                product_data = {
-                    "product_name": product_name,
-                    "product_url": product_url,
-                    "product_price": product_price,
-                    "product_stock": "In Stock",
-                    "product_sizes": scrape_product_sizes(product_soup),
-                    "product_image": scrape_product_image(product_soup)
-                }
+                        # send product data to webhook
+                        if product_data["product_url"] not in product_urls:
+                            product_urls.append(product_data["product_url"])
+                            new_shoe_message("Sneakerbox tlv", product_data["product_name"],
+                                             product_data["product_url"],
+                                             product_data["product_price"], "In Stock", product_data["product_sizes"],
+                                             product_data["product_image"])
+                            update_products_json_file("sneakerboxtlv", product_data)
 
-                # send product data to webhook
-                if product_data["product_url"] not in product_urls:
-                    product_urls.append(product_data["product_url"])
-                    new_shoe_message("Sneakerbox tlv", product_data["product_name"], product_data["product_url"],
-                                     product_data["product_price"], "In Stock", product_data["product_sizes"],
-                                     product_data["product_image"])
-                    update_products_json_file("sneakerboxtlv", product_data)
         offset += 24
 
 

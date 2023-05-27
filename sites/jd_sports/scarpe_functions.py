@@ -1,5 +1,5 @@
 import json
-
+import time
 
 def scrape_product_price(product_soup):
     if product_soup.find('span', class_='price price--large'):
@@ -9,14 +9,25 @@ def scrape_product_price(product_soup):
 
 
 def scrape_product_image(product_soup):
-    return f"https://{product_soup.find('div', class_='product__media-image-wrapper').find('img').get('src')[2:]}"
+    product_image = ""
+    try:
+        product_image = f"https://{product_soup.find('div', class_='product__media-image-wrapper').find('img').get('src')[2:]}"
+    except:
+        print("Error scraping image")
+        time.sleep(5)
+        pass
+    return product_image
 
 
 def scrape_product_sizes(product_soup):
     sizes = []
-
-    for size in json.loads(product_soup.find('script', type='application/ld+json').text)['offers']:
-        if size['availability'] == 'https://schema.org/InStock':
-            sizes.append(size['name'].split(' / ')[0])
+    try:
+        for size in json.loads(product_soup.find('script', type='application/ld+json').text)['offers']:
+            if size['availability'] == 'https://schema.org/InStock':
+                sizes.append(size['name'].split(' / ')[0])
+    except:
+        print("Error scraping sizes")
+        time.sleep(5)
+        pass
 
     return sizes

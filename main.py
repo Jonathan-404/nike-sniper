@@ -7,12 +7,14 @@ from sites.jd_sports import jd_sports
 from sites.terminal_x import terminal_x
 from sites.factory_54 import factory_54
 from sites.sneakerboxtlv import sneakerboxtlv
+from sites.notforsale import notforsale
 
 # sites urls
 jd_sports_urls = ["https://www.jdsports.co.il/collections/men-shoes-sneakers?page=", "https://www.jdsports.co.il/collections/women-shoes-sneakers?page="]
 terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes?p="
 factory_54_url = ["https://www.factory54.co.il/men-shoes-sneakers?start="]
 sneakerboxtlv_url = "https://sneakerboxtlv.com/wp-admin/admin-ajax.php"
+notforsale_url = "https://notforsaletlv.com/collections/sneakers?page="
 
 
 def main():
@@ -29,6 +31,9 @@ def main():
 
         sneakerboxtlv_process = Process(target=sneakerboxtlv.new_product_urls, args=(sneakerboxtlv_url, keywords))
         sneakerboxtlv_process.start()
+
+        notforsale_process = Process(target=notforsale.new_product_urls, args=(notforsale_url, keywords))
+        notforsale_process.start()
 
         time.sleep(30)
 

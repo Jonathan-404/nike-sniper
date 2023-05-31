@@ -64,8 +64,6 @@ def new_product_urls(url: str, keywords: list):
                             update_products_json_file("sneakerboxtlv", product_data)
 
         offset += 24
-
-
 def update_products_json_file(company_name: str, product_data: dict):
     with open("product_data.json", 'r+') as file:
         file_data = json.load(file)

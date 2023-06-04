@@ -1,4 +1,4 @@
-from sites.factory_54.scrape_functions import scrape_product_sizes
+from src.factory_54.scrape_functions import scrape_product_sizes
 from webhook_manager import new_shoe_message
 from bs4 import BeautifulSoup
 import requests

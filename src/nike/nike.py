@@ -10,7 +10,6 @@ def main():
     products_images = []
     products_sizes = []
 
-
     scrape_first_products(products_urls, products_names, products_prices, products_images)
     create_scroll_pages_list(api_url, pages_list)
     scrape_api_products_details(pages_list, products_urls, products_names, products_prices, products_images)

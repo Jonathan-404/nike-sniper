@@ -2,3 +2,4 @@
 /__pycache__/
 product_urls.txt
 .gitignore
+.env

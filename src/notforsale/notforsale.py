@@ -1,4 +1,4 @@
-from sites.notforsale.scarpe_functions import scrape_product_image, scrape_product_sizes
+from sites.notforsale.scarpe_functions import scrape_product_sizes
 from webhook_manager import new_shoe_message
 from bs4 import BeautifulSoup
 import requests

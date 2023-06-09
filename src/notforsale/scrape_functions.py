@@ -1,4 +1,4 @@
-def scrape_product_sizes(product_soup):
+def get_sizes(product_soup):
     sizes = []
 
     sizes_parent = product_soup.find_all('div', class_='variant-input')

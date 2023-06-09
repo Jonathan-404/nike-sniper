@@ -1,10 +1,10 @@
-from sites.notforsale.scarpe_functions import scrape_product_sizes
-from webhook_manager import new_shoe_message
 from bs4 import BeautifulSoup
 import requests
 import json
 
-
+from ..utils import get_urls, get_stored_sizes, check_for_updates
+from ..Shoe import Shoe
+from ..notforsale.scrape_functions import get_sizes
 
 """
 SITE ALGORITHM STARTS HERE
@@ -12,12 +12,8 @@ SITE ALGORITHM STARTS HERE
 SITE NAME: not for sale
 """
 
-def new_product_urls(url: str, keywords: list):
+def get(url: str, keywords: list):
     pages = [url + '1']
-    product_urls = []
-    product_data_file = json.load(open("product_data.json", "r"))
-    for product in product_data_file["notforsale"]:
-        product_urls.append(product["product_url"])
 
     content = requests.get(url + '1').content
     soup = BeautifulSoup(content, 'html.parser')
@@ -26,51 +22,34 @@ def new_product_urls(url: str, keywords: list):
     for page in range(1, page_num + 1):
         pages.append(f'{url}{page}')
 
+    urls = get_urls("notforsale")
+
     for page in pages:
         content = requests.get(page).content
         soup = BeautifulSoup(content, 'html.parser')
         product_parent = soup.find_all('div', class_='grid-product__content')
         for product_child in product_parent:
-            product_url = f"https://notforsaletlv.com/{product_child.find('a')['href']}"
-            product_image = f"https:{product_child.find('img')['src']}"
-            product_name = f"{product_child.find('div', class_='grid-product__meta').find('div', class_='grid-product__vendor').text.strip()} {product_child.find('div', class_='grid-product__meta').find('div', class_='grid-product__title grid-product__title--heading').text.strip()}"
-            product_price = product_child.find('div', class_='grid-product__price').text.strip().split('\n')
-            if "Regular price" in product_price:
-                product_price = product_price[2][10:]
+
+            p_url = f"https://notforsaletlv.com/{product_child.find('a')['href']}"
+            image = f"https:{product_child.find('img')['src']}"
+            name = f"{product_child.find('div', class_='grid-product__meta').find('div', class_='grid-product__vendor').text.strip()} {product_child.find('div', class_='grid-product__meta').find('div', class_='grid-product__title grid-product__title--heading').text.strip()}"
+            price = product_child.find('div', class_='grid-product__price').text.strip().split('\n')
+
+            if "Regular price" in price:
+                price = price[2][10:]
             else:
-                product_price = product_price[0]
+                price = price[0]
 
             for keyword in keywords:
-                if keyword in product_name:
-                    product_content = requests.get(product_url).content
-                    product_soup = BeautifulSoup(product_content, 'html.parser')
+                if keyword in name:
+                    sec_content = requests.get(p_url).content
+                    sec_soup = BeautifulSoup(sec_content, 'html.parser')
+                    sizes = get_sizes(sec_soup)
+                    shoe = Shoe("notforsale", name, p_url, price, image, sizes)
 
-                    # store product data in json file
-                    product_data = {
-                        "product_name": product_name,
-                        "product_url": product_url,
-                        "product_price": product_price,
-                        "product_stock": "In Stock",
-                        "product_sizes": ['12'],
-                        "product_image": product_image
-                    }
-                    # send product data to webhook
-                    if product_data["product_url"] not in product_urls:
-                        product_urls.append(product_url)
-
-                        product_urls.append(product_data["product_url"])
-                        update_products_json_file("notforsale", product_data)
-                        new_shoe_message("Notforsale", product_data["product_name"],
-                                         product_data["product_url"],
-                                         product_data["product_price"], "In Stock", product_data["product_sizes"],
-                                         product_data["product_image"])
-
-
-            # get the link of every shoe in the site
-
-def update_products_json_file(company_name: str, product_data: dict):
-    with open("product_data.json", 'r+') as file:
-        file_data = json.load(file)
-        file_data[company_name].append(product_data)
-        file.seek(0)
-        json.dump(file_data, file, indent=4)
+                    if p_url not in urls:
+                        shoe.discord_message()
+                        shoe.update()
+                        urls.append(shoe.url)
+                    else:
+                        check_for_updates(sizes, get_stored_sizes(shoe.site, shoe.url), shoe)

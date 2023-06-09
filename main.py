@@ -3,11 +3,11 @@ from keys import keywords
 import time
 
 # sites algorithms
-#from src.jd_sports import jd_sports
+from src.jd_sports import jd_sports
 from src.terminal_x import terminal_x
 #from src.factory_54 import factory_54
-#from src.sneakerboxtlv import sneakerboxtlv
-#from src.notforsale import notforsale
+from src.sneakerboxtlv import sneakerboxtlv
+from src.notforsale import notforsale
 
 # sites urls
 jd_sports_urls = ["https://www.jdsports.co.il/collections/men-shoes-sneakers?page=", "https://www.jdsports.co.il/collections/women-shoes-sneakers?page="]
@@ -18,28 +18,36 @@ notforsale_url = "https://notforsaletlv.com/collections/sneakers?page="
 
 
 def main():
+    processes = []  # List to store the processes
 
-    while True:
-        #jd_sports_process = Process(target=jd_sports.new_product_urls, args=(jd_sports_urls, keywords))
-        #jd_sports_process.start()
+    # Create and start the processes
+    jd_sports_process = Process(target=jd_sports.get, args=(jd_sports_urls, keywords))
+    processes.append(jd_sports_process)
 
-        terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url,))
-        before = time.time()
-        terminal_x_process.start()
-        terminal_x_process.join()
-        after = time.time()
-        print(after - before)
+    notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords))
+    processes.append(notforsale_process)
 
-        #factory_54_process = Process(target=factory_54.new_product_urls, args=(factory_54_url, keywords))
-        #factory_54_process.start()
+    # jd_sports_process = Process(target=jd_sports.new_product_urls, args=(jd_sports_urls, keywords))
 
-        #sneakerboxtlv_process = Process(target=sneakerboxtlv.new_product_urls, args=(sneakerboxtlv_url, keywords))
-        #sneakerboxtlv_process.start()
+    terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url, keywords))
+    processes.append(terminal_x_process)
 
-        #notforsale_process = Process(target=notforsale.new_product_urls, args=(notforsale_url, keywords))
-        #notforsale_process.start()
+    # factory_54_process = Process(target=factory_54.new_product_urls, args=(factory_54_url, keywords))
 
-        #time.sleep(30)
+    sneakerboxtlv_process = Process(target=sneakerboxtlv.get, args=(sneakerboxtlv_url, keywords))
+    processes.append(sneakerboxtlv_process)
+
+    # notforsale_process = Process(target=notforsale.new_product_urls, args=(notforsale_url, keywords))
+
+    # Start all processes
+    for process in processes:
+        process.start()
+
+    # Wait for all processes to finish
+    for process in processes:
+        process.join()
+
+    # Rest of the code after all processes have finished
 
 
 if __name__ == "__main__":

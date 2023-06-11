@@ -1,4 +1,4 @@
-/keys.py
 /__pycache__/
 product_urls.txt
 .gitignore
+.env

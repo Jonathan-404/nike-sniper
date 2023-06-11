@@ -37,7 +37,7 @@ def new_product_urls(url: str, keywords: list):
 
 
 def update_products_json_file(company_name: str, product_data: dict):
-    with open("product_data.json", 'r+') as file:
+    with open("data.json", 'r+') as file:
         file_data = json.load(file)
         file_data[company_name].append(product_data)
         file.seek(0)

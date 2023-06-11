@@ -1,4 +1,4 @@
-from sites.factory_54.scrape_functions import scrape_product_sizes
+from src.factory_54.scrape_functions import scrape_product_sizes
 from webhook_manager import new_shoe_message
 from bs4 import BeautifulSoup
 import requests
@@ -19,7 +19,7 @@ def new_product_urls(urls: list, keywords: list):
 
             product_urls = []
 
-            product_data_file = json.load(open("product_data.json", "r"))
+            product_data_file = json.load(open("data.json", "r"))
             for product in product_data_file["factory_54"]:
                 product_urls.append(product["product_url"])
 
@@ -57,7 +57,7 @@ def new_product_urls(urls: list, keywords: list):
 
 
 def update_products_json_file(company_name: str, product_data: dict):
-    with open("product_data.json", 'r+') as file:
+    with open("data.json", 'r+') as file:
         file_data = json.load(file)
         file_data[company_name].append(product_data)
         file.seek(0)

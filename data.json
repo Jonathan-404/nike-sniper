@@ -51,20 +51,7 @@
                 "42",
                 "42.5",
                 "44",
-                "44.5",
                 "45.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Stencil Swoosh",
-            "url": "https://www.jdsports.co.il/products/nifd0661100",
-            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_FD0661-100_a_1800x.jpg?v=1681779656",
-            "price": "469.90",
-            "sizes": [
-                "40",
-                "40.5",
-                "42"
             ],
             "stock": "In Stock"
         },
@@ -103,6 +90,18 @@
                 "42",
                 "42.5",
                 "44"
+            ],
+            "stock": "In Stock"
+        },
+        {
+            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Stencil Swoosh",
+            "url": "https://www.jdsports.co.il/products/nifd0661100",
+            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_FD0661-100_a_1800x.jpg?v=1681779656",
+            "price": "469.90",
+            "sizes": [
+                "40",
+                "40.5",
+                "42"
             ],
             "stock": "In Stock"
         },
@@ -261,6 +260,16 @@
             "stock": "In Stock"
         },
         {
+            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Dark Beetroot",
+            "url": "https://www.jdsports.co.il/products/nidj6188600",
+            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_DJ6188-600_a_697bd90f-562a-4d5f-bf6a-1823bc7af61b_1800x.jpg?v=1679925989",
+            "price": "449.90",
+            "sizes": [
+                "44"
+            ],
+            "stock": "In Stock"
+        },
+        {
             "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 \u05d2\u05d1\u05d5\u05d4\u05d5\u05ea Dunk High Retro",
             "url": "https://www.jdsports.co.il/products/nido9775001",
             "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_554528_a_1957a336-efd7-4e59-92cb-f37ab4b95a96_1800x.jpg?v=1680172189",
@@ -272,16 +281,6 @@
                 "42.5",
                 "43",
                 "45"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Dark Beetroot",
-            "url": "https://www.jdsports.co.il/products/nidj6188600",
-            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_DJ6188-600_a_697bd90f-562a-4d5f-bf6a-1823bc7af61b_1800x.jpg?v=1679925989",
-            "price": "449.90",
-            "sizes": [
-                "44"
             ],
             "stock": "In Stock"
         },
@@ -319,22 +318,22 @@
             "stock": "In Stock"
         },
         {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Coconut Milk",
-            "url": "https://www.jdsports.co.il/products/nidj6188100",
-            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_506144_a_7e99ee47-2f63-4f30-b068-528d5c0d04dc_1800x.jpg?v=1680172319",
-            "price": "449.90",
-            "sizes": [
-                "38.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
             "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Retro Premium",
             "url": "https://www.jdsports.co.il/products/nidv0827100",
             "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_DV0827-100_a_1800x.jpg?v=1676973590",
             "price": "469.90",
             "sizes": [
                 "40.5"
+            ],
+            "stock": "In Stock"
+        },
+        {
+            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Dunk Low Coconut Milk",
+            "url": "https://www.jdsports.co.il/products/nidj6188100",
+            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_506144_a_7e99ee47-2f63-4f30-b068-528d5c0d04dc_1800x.jpg?v=1680172319",
+            "price": "449.90",
+            "sizes": [
+                "38.5"
             ],
             "stock": "In Stock"
         },
@@ -501,38 +500,9 @@
                 "36"
             ],
             "stock": "In Stock"
-        },
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Air Max 95",
-            "url": "https://www.jdsports.co.il/products/nifj4217002",
-            "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_FJ4217-002_a_1800x.jpg?v=1684976460",
-            "price": "749.90",
-            "sizes": [
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47"
-            ],
-            "stock": "In Stock"
         }
     ],
     "terminal_x": [
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Nike Dunk Low Retro / \u05d2\u05d1\u05e8\u05d9\u05dd",
-            "url": "https://www.terminalx.com/men/shoes/sneakers-shoes/men/shoes/sneakers-shoes/z830450008?color=7",
-            "img": "https://media.terminalx.com/pub/media/catalog/product/cache/18af6b3a2b941abd05c55baf78d1b952/z/8/z830450008-11680519999.jpg",
-            "price": "479.90",
-            "sizes": [],
-            "stock": "In Stock"
-        },
         {
             "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 \u05e2\u05d5\u05e8 Dunk High Retro Premium / \u05d2\u05d1\u05e8\u05d9\u05dd",
             "url": "https://www.terminalx.com/men/shoes/sneakers-shoes/men/shoes/sneakers-shoes/z851030001?color=4",
@@ -551,67 +521,6 @@
             "img": "https://media.terminalx.com/pub/media/catalog/product/cache/18af6b3a2b941abd05c55baf78d1b952/z/6/z652450013-11666253868.jpg",
             "price": "529.90",
             "sizes": [
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "\u05e0\u05e2\u05dc\u05d9 \u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 \u05d2\u05d1\u05d5\u05d4\u05d5\u05ea \u05de\u05e7\u05d5\u05dc\u05e7\u05e6\u05d9\u05ea VANS X ONE PIECE COLLECTION / \u05d2\u05d1\u05e8\u05d9\u05dd",
-            "url": "https://www.terminalx.com/men/shoes/sneakers-shoes/men/shoes/sneakers-shoes/z780210010?color=5",
-            "img": "https://media.terminalx.com/pub/media/catalog/product/cache/18af6b3a2b941abd05c55baf78d1b952/z/7/z780210010-11673525153.jpg",
-            "price": "419.90",
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "42",
-                "44.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 Nike Air Force 1 '07 LV8 / \u05d2\u05d1\u05e8\u05d9\u05dd",
-            "url": "https://www.terminalx.com/men/shoes/sneakers-shoes/men/shoes/sneakers-shoes/z800040005?color=10",
-            "img": "https://media.terminalx.com/pub/media/catalog/product/cache/18af6b3a2b941abd05c55baf78d1b952/z/8/z800040005-11686121416.jpg",
-            "price": "519.90",
-            "sizes": [
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "\u05e1\u05e0\u05d9\u05e7\u05e8\u05e1 \u05e2\u05d5\u05e8 Nike Air Force 1 '07 / \u05d2\u05d1\u05e8\u05d9\u05dd",
-            "url": "https://www.terminalx.com/men/shoes/sneakers-shoes/men/shoes/sneakers-shoes/z800180005?color=10",
-            "img": "https://media.terminalx.com/pub/media/catalog/product/cache/18af6b3a2b941abd05c55baf78d1b952/z/8/z800180005-11686121473.jpg",
-            "price": "519.90",
-            "sizes": [
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
                 "49.5"
             ],
             "stock": "In Stock"
@@ -725,171 +634,10 @@
                 "41"
             ],
             "stock": "In Stock"
-        },
-        {
-            "name": "Air Jordan Air Ship",
-            "url": "https://sneakerboxtlv.com/product/air-ship-tech-grey/",
-            "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/06/SB-SHOES-2023-06-05T121607.318.jpg",
-            "price": "599.90\u00a0ILS",
-            "sizes": [
-                "38.5",
-                "40",
-                "40.5",
-                "42",
-                "42.5",
-                "44",
-                "45",
-                "45.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Hot Step Air Terra",
-            "url": "https://sneakerboxtlv.com/product/hot-step-air-terra/",
-            "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/05/SB-SHOES-35.jpg",
-            "price": "699.90\u00a0ILS",
-            "sizes": [
-                "36",
-                "36.5",
-                "37.5",
-                "38",
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "41",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Air Zoom G.T. Jump",
-            "url": "https://sneakerboxtlv.com/product/nike-air-zoom-g-t-jump/",
-            "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/06/SB-SHOES-2023-06-05T124306.401-1.jpg",
-            "price": "699.90\u00a0ILS",
-            "sizes": [
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47.5",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Air Force 1 Low",
-            "url": "https://sneakerboxtlv.com/product/air-force-1-low-team-goldy/",
-            "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/06/SB-SHOES-2023-06-04T190931.475.jpg",
-            "price": "499.90\u00a0ILS",
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "41",
-                "42",
-                "42.5",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "47",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Air Trainer 1",
-            "url": "https://sneakerboxtlv.com/product/air-trainer-1-coconut-milk/",
-            "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/06/SB-SHOES-2023-06-04T182636.168.jpg",
-            "price": "499.90\u00a0ILS",
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "41",
-                "42",
-                "42.5",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
         }
     ],
+    "notforsale": [],
     "nike": [
-        {
-            "name": "Nike Dunk High Retro",
-            "url": "https://www.nike.com/il/t/dunk-high-retro-shoe-1PhQRw/DD1399-105",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/image.jpg",
-            "price": 469.9,
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Dunk High Retro",
-            "url": "https://www.nike.com/il/t/dunk-high-retro-shoe-1PhQRw/DD1399-105",
-            "img": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/dunk-high-retro-shoe-1PhQRw.png",
-            "price": "469.90",
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5"
-            ],
-            "stock": "In Stock"
-        },
         {
             "name": "Nike Dunk High Retro",
             "url": "https://www.nike.com/il/t/dunk-high-retro-shoes-slSvmX/FD9759-100",
@@ -923,9 +671,35 @@
         },
         {
             "name": "Nike Dunk High By You",
-            "url": "https://www.nike.com/il/u/custom-nike-dunk-high-by-you-shoes-10001378/2841795202",
-            "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/14026614-c63f-4f7f-b3fc-758e557818ba/custom-nike-dunk-high-by-you-shoes.jpg",
+            "url": "https://www.nike.com/il/u/custom-nike-dunk-high-by-you-shoes-10001378/8569163867",
+            "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/4f2924bb-df73-41c4-bf37-a55bec71eaac/custom-nike-dunk-high-by-you-shoes.jpg",
             "price": 599.9,
+            "sizes": [
+                "38.5",
+                "39",
+                "40",
+                "40.5",
+                "41",
+                "42",
+                "42.5",
+                "43",
+                "44",
+                "44.5",
+                "45",
+                "45.5",
+                "46",
+                "47",
+                "47.5",
+                "48.5",
+                "49.5"
+            ],
+            "stock": "In Stock"
+        },
+        {
+            "name": "Nike Dunk High Retro",
+            "url": "https://www.nike.com/il/t/dunk-high-retro-shoe-1PhQRw/DD1399-105",
+            "img": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto/5e7687f1-c13e-4bac-8ffa-a6f863ae9157/dunk-high-retro-shoe-1PhQRw.png",
+            "price": "469.90",
             "sizes": [
                 "38.5",
                 "39",
@@ -1055,113 +829,10 @@
             "stock": "In Stock"
         },
         {
-            "name": "Nike Air Force 1 '07",
-            "url": "https://www.nike.com/il/t/air-force-1-07-shoes-SqKG2H/DV0788-001",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/3f3e7049-5c99-428c-abcd-e246b086f2ed/image.jpg",
+            "name": "Nike Dunk High Retro",
+            "url": "https://www.nike.com/il/t/dunk-high-retro-shoes-19VMxv/DJ6189-100",
+            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/d0c10e95-d0b9-4c57-98ad-a16a857cbec2/image.jpg",
             "price": 469.9,
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Air Jordan 1 Low",
-            "url": "https://www.nike.com/il/t/air-jordan-1-low-shoes-HQW5F3/553558-065",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/a3f4837b-678c-466c-b4fb-532b306dfb1e/image.jpg",
-            "price": 469.9,
-            "sizes": [
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5",
-                "50.5",
-                "51.5",
-                "52.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Air Jordan 1 Mid",
-            "url": "https://www.nike.com/il/t/air-jordan-1-mid-shoes-D8g1Qq/554724-174",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/zzmfk3kwuw3ktkilxfnp/image.jpg",
-            "price": 499.9,
-            "sizes": [
-                "40",
-                "40.5",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5",
-                "50.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Air Force 1 '07",
-            "url": "https://www.nike.com/il/t/air-force-1-07-shoes-rWtqPn/CW2288-111",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/b7d9211c-26e7-431a-ac24-b0540fb3c00f/image.jpg",
-            "price": 469.9,
-            "sizes": [
-                "38.5",
-                "39",
-                "40",
-                "40.5",
-                "41",
-                "42",
-                "42.5",
-                "43",
-                "44",
-                "44.5",
-                "45",
-                "45.5",
-                "46",
-                "47",
-                "47.5",
-                "48.5",
-                "49.5",
-                "50.5",
-                "51.5"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "Nike Air Monarch IV",
-            "url": "https://www.nike.com/il/t/air-monarch-iv-training-shoe-VrTWXJJn/415445-102",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/f9a8deaa-87f2-4191-92b8-c7661aae48de/image.jpg",
-            "price": 299.9,
             "sizes": [
                 "38.5",
                 "39",
@@ -1184,11 +855,16 @@
             "stock": "In Stock"
         },
         {
-            "name": "Nike Air Max Alpha Trainer 5",
-            "url": "https://www.nike.com/il/t/air-max-alpha-trainer-5-training-shoes-mgZ1Lq/DM0829-008",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/940d527a-2ec4-4f11-9bc8-7c800da58b66/image.jpg",
-            "price": 339.9,
+            "name": "Nike Dunk High Retro",
+            "url": "https://www.nike.com/il/t/dunk-high-retro-shoes-NGQKfr/FD0668-001",
+            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/8975d52c-b787-43a5-b5b4-78d4d3ba2584/image.jpg",
+            "price": 499.9,
             "sizes": [
+                "35.5",
+                "36",
+                "36.5",
+                "37.5",
+                "38",
                 "38.5",
                 "39",
                 "40",
@@ -1204,16 +880,24 @@
                 "46",
                 "47",
                 "47.5",
-                "48.5"
+                "48.5",
+                "49.5"
             ],
             "stock": "In Stock"
         },
         {
-            "name": "Air Jordan 1 Low",
-            "url": "https://www.nike.com/il/t/air-jordan-1-low-shoes-m6nkFh/553558-174",
-            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/3f0a3ad8-dee0-4549-87d8-ee993bb11a99/image.jpg",
-            "price": 469.9,
+            "name": "Nike Dunk High x SOULGOODS",
+            "url": "https://www.nike.com/il/t/dunk-high-soulgoods-shoes-x1l1gr/DR1415-200",
+            "img": "https://static.nike.com/a/images/c_limit,w_400,f_auto/t_product_v1/4aaf8bf7-40d7-4ed5-a103-144bbda7b1df/image.jpg",
+            "price": 609.9,
             "sizes": [
+                "35.5",
+                "36",
+                "36.5",
+                "37.5",
+                "38",
+                "38.5",
+                "39",
                 "40",
                 "40.5",
                 "41",
@@ -1228,159 +912,7 @@
                 "47",
                 "47.5",
                 "48.5",
-                "49.5",
-                "50.5"
-            ],
-            "stock": "In Stock"
-        }
-    ],
-    "notforsale": [
-        {
-            "name": "VANS 2-TONE OLD SKOOL BOLT",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/2-tone-old-skool-bolt",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q5BMW-1.jpg?v=1680027607&width=1080",
-            "price": "399.90 NIS",
-            "sizes": [
-                "36",
-                "36\u00bd",
-                "37",
-                "38",
-                "38\u00bd",
-                "39",
-                "40",
-                "40\u00bd",
-                "41",
-                "42",
-                "42\u00bd",
-                "43",
-                "44",
-                "44\u00bd",
-                "45"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS 2-TONE OLD SKOOL BOLT",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/2-tone-old-skool-bolt-1",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q5BGN-1.jpg?v=1680027624&width=1080",
-            "price": "399.90 NIS",
-            "sizes": [
-                "36",
-                "36\u00bd",
-                "37",
-                "38",
-                "38\u00bd",
-                "39",
-                "40",
-                "40\u00bd",
-                "41",
-                "42",
-                "42\u00bd",
-                "43",
-                "44",
-                "44\u00bd",
-                "45"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS 2-TONE OLD SKOOL BOLT",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/2-tone-old-skool-bolt-2",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q5NWD-1.jpg?v=1680027642&width=1080",
-            "price": "399.90 NIS",
-            "sizes": [
-                "36",
-                "36\u00bd",
-                "37",
-                "38",
-                "38\u00bd",
-                "39",
-                "40",
-                "40\u00bd",
-                "41",
-                "42",
-                "42\u00bd",
-                "43",
-                "44",
-                "44\u00bd",
-                "45"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS 2-TONE OLD SKOOL BOLT",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/2-tone-old-skool-bolt-3",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q56RT-1.jpg?v=1680027659&width=1080",
-            "price": "399.90 NIS",
-            "sizes": [
-                "36",
-                "36\u00bd",
-                "37",
-                "38",
-                "38\u00bd",
-                "39",
-                "40",
-                "40\u00bd",
-                "41",
-                "42",
-                "42\u00bd",
-                "43",
-                "44",
-                "44\u00bd",
-                "45"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS AMZN PACU",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/amzn-pacu",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q1KS7-1.jpg?v=1682069850&width=1080",
-            "price": "299.90 NIS",
-            "sizes": [
-                "35",
-                "36 \u00bd",
-                "38",
-                "39",
-                "40 \u00bd",
-                "42",
-                "43",
-                "44 \u00bd",
-                "46"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS AMZN PACU",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/amzn-pacu-1",
-            "img": "https://notforsaletlv.com/cdn/shop/products/VN0009Q1BLL-1.jpg?v=1682069950&width=1080",
-            "price": "299.90 NIS",
-            "sizes": [
-                "35",
-                "36 \u00bd",
-                "38",
-                "39",
-                "40 \u00bd",
-                "42",
-                "43",
-                "44 \u00bd",
-                "46"
-            ],
-            "stock": "In Stock"
-        },
-        {
-            "name": "VANS AMZN PACU",
-            "url": "https://notforsaletlv.com//collections/sneakers/products/amzn-pacu-2",
-            "img": "https://notforsaletlv.com/cdn/shop/files/VN0009Q1BM71-1.jpg?v=1684790798&width=1080",
-            "price": "299.90 NIS",
-            "sizes": [
-                "36 \u00bd",
-                "38",
-                "39",
-                "40 \u00bd",
-                "42",
-                "43",
-                "44 \u00bd",
-                "46"
+                "49.5"
             ],
             "stock": "In Stock"
         }

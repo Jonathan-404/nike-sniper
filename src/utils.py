@@ -1,5 +1,6 @@
 import json
 
+
 def get_urls(site: str):
     urls = []
 
@@ -15,6 +16,7 @@ def get_stored_sizes(site, url):
         for stored_shoe in file_data[site]:
             if stored_shoe["url"] == url:
                 return stored_shoe["sizes"]
+
 
 def check_for_updates(sizes, stored_sizes, shoe):
     if len(sizes) > len(stored_sizes):

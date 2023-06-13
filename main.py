@@ -24,34 +24,36 @@ nike_url = "https://www.nike.com/il/w/mens-shoes-nik1zy7ok"
 
 
 def main():
-    processes = []  # List to store the processes
+    while True:
 
-    # Create and start the processes
-    jd_sports_process = Process(target=jd_sports.get, args=(jd_sports_urls, keywords))
-    processes.append(jd_sports_process)
+        processes = []  # List to store the processes
 
-    terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url, keywords))
-    processes.append(terminal_x_process)
+        # Create and start the processes
+        jd_sports_process = Process(target=jd_sports.get, args=(jd_sports_urls, keywords))
+        processes.append(jd_sports_process)
 
-    sneakerboxtlv_process = Process(target=sneakerboxtlv.get, args=(sneakerboxtlv_url, keywords))
-    processes.append(sneakerboxtlv_process)
+        terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url, keywords))
+        processes.append(terminal_x_process)
 
-    notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords))
-    processes.append(notforsale_process)
+        sneakerboxtlv_process = Process(target=sneakerboxtlv.get, args=(sneakerboxtlv_url, keywords))
+        processes.append(sneakerboxtlv_process)
 
-    nike_first_process = Process(target=nike.get_first, args=(nike_url, keywords))
-    processes.append(nike_first_process)
+        notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords))
+        processes.append(notforsale_process)
 
-    nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords))
-    processes.append(nike_api_process)
+        nike_first_process = Process(target=nike.get_first, args=(nike_url, keywords))
+        processes.append(nike_first_process)
 
-    # Start all processes
-    for process in processes:
-        process.start()
+        nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords))
+        processes.append(nike_api_process)
 
-    # Wait for all processes to finish
-    for process in processes:
-        process.join()
+        # Start all processes
+        for process in processes:
+            process.start()
+
+        # Wait for all processes to finish
+        for process in processes:
+            process.join()
 
 
 if __name__ == "__main__":

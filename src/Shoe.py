@@ -60,6 +60,7 @@ class Shoe:
             file_data = json.load(file)
             file_data[self.site].append(self.json())
             file.seek(0)
+            # file.truncate()
             json.dump(file_data, file, indent=4)
 
     def update_sizes(self, sizes):
@@ -70,6 +71,7 @@ class Shoe:
                     shoe["sizes"] = sizes
                     break
             file.seek(0)
+            # file.truncate()
             json.dump(file_data, file, indent=4)
 
     def update_sizes_message(self, added_sizes, removed_sizes):

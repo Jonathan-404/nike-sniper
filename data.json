@@ -173,7 +173,6 @@
                 "43",
                 "44",
                 "44.5",
-                "45",
                 "45.5"
             ],
             "stock": "In Stock"
@@ -210,7 +209,6 @@
             "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_620022_a_aac90a72-ffa1-4c4a-ba17-5cd47ad81116_1800x.jpg?v=1680168358",
             "price": "429.90",
             "sizes": [
-                "36.5",
                 "37.5",
                 "38"
             ],
@@ -247,7 +245,6 @@
             "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_620019_a_1800x.jpg?v=1674382611",
             "price": "429.90",
             "sizes": [
-                "40",
                 "40.5",
                 "41"
             ],
@@ -541,7 +538,6 @@
             "img": "https://sneakerboxtlv.com/wp-content/uploads/2023/05/SB-SHOES-18.jpg",
             "price": "429.90\u00a0ILS",
             "sizes": [
-                "46",
                 "49.5"
             ],
             "stock": "In Stock"
@@ -924,6 +920,32 @@
             "name": "Nike Dunk High By You",
             "url": "https://www.nike.com/il/u/custom-nike-dunk-high-by-you-shoes-10001378/7477492029",
             "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/3dbb8fa2-c360-4d4d-8d60-07447905e64a/custom-nike-dunk-high-by-you-shoes.jpg",
+            "price": 599.9,
+            "sizes": [
+                "38.5",
+                "39",
+                "40",
+                "40.5",
+                "41",
+                "42",
+                "42.5",
+                "43",
+                "44",
+                "44.5",
+                "45",
+                "45.5",
+                "46",
+                "47",
+                "47.5",
+                "48.5",
+                "49.5"
+            ],
+            "stock": "In Stock"
+        },
+        {
+            "name": "Nike Dunk High By You",
+            "url": "https://www.nike.com/il/u/custom-nike-dunk-high-by-you-shoes-10001378/2841795202",
+            "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/14026614-c63f-4f7f-b3fc-758e557818ba/custom-nike-dunk-high-by-you-shoes.jpg",
             "price": 599.9,
             "sizes": [
                 "38.5",

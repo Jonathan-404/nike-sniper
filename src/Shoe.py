@@ -24,37 +24,37 @@ class Shoe:
         }
 
     def discord_message(self):
-        for webhook in discord_webhooks:
-            discord = Discord(url=webhook)
-            discord.post(embeds=[
-                    {
-                        "color": 0x00ff00,
-                        "type": "rich",
+
+        discord = Discord(url=discord_webhooks[self.site])
+        discord.post(embeds=[
+                {
+                    "color": 0x00ff00,
+                    "type": "rich",
+                    "url": self.url,
+
+                    "author": {
+                        "name": self.site,
                         "url": self.url,
+                    },
 
-                        "author": {
-                            "name": self.site,
-                            "url": self.url,
-                        },
+                    "title": "New Shoe Listed!",
+                    "description": f"New shoe has been listed on {self.site}",
 
-                        "title": "New Shoe Listed!",
-                        "description": f"New shoe has been listed on {self.site}",
+                    "fields": [
+                        {"name": "Product Name", "value": self.name, "inline": True},
+                        {"name": "Price", "value": f"{self.price} ILS", "inline": True},
+                        {"name": "Status", "value": "In Stock"},
+                        {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
+                    ],
 
-                        "fields": [
-                             {"name": "Product Name", "value": self.name, "inline": True},
-                            {"name": "Price", "value": f"{self.price} ILS", "inline": True},
-                            {"name": "Status", "value": "In Stock"},
-                            {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
-                        ],
+                    "thumbnail": {"url": f"{self.img}"},
 
-                        "thumbnail": {"url": f"{self.img}"},
-
-                        "footer": {
-                            "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
-                        },
-                    }
-                ],
-            )
+                    "footer": {
+                        "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
+                    },
+                }
+            ],
+        )
 
     def update(self):
         with open("data.json", 'r+') as file:
@@ -76,37 +76,36 @@ class Shoe:
             json.dump(file_data, file, indent=4)
 
     def update_sizes_message(self, added_sizes, removed_sizes):
-        for webhook in discord_webhooks:
-            discord = Discord(url=webhook)
-            discord.post(embeds=[
-                    {
-                        "color": 0x00ff00,
-                        "type": "rich",
+        discord = Discord(url=discord_webhooks[self.site])
+        discord.post(embeds=[
+                {
+                    "color": 0x00ff00,
+                    "type": "rich",
+                    "url": self.url,
+
+                    "author": {
+                        "name": self.site,
                         "url": self.url,
+                    },
 
-                        "author": {
-                            "name": self.site,
-                            "url": self.url,
-                        },
+                    "title": "Sizes Updated!",
+                    "description": f"Sizes have been updated on {self.site}",
 
-                        "title": "Sizes Updated!",
-                        "description": f"Sizes have been updated on {self.site}",
+                    "fields": [
+                        {"name": "Product Name", "value": self.name, "inline": True},
+                        {"name": "Price", "value": f"{self.price} ILS", "inline": True},
+                        {"name": "Status", "value": "In Stock"},
+                        {"name": "Added Sizes", "value": f"{' '.join(added_sizes)}", "inline": True},
+                        {"name": "Removed Sizes", "value": f"{' '.join(removed_sizes)}", "inline": True},
+                        {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
+                    ],
 
-                        "fields": [
-                            {"name": "Product Name", "value": self.name, "inline": True},
-                            {"name": "Price", "value": f"{self.price} ILS", "inline": True},
-                            {"name": "Status", "value": "In Stock"},
-                            {"name": "Added Sizes", "value": f"{' '.join(added_sizes)}", "inline": True},
-                            {"name": "Removed Sizes", "value": f"{' '.join(removed_sizes)}", "inline": True},
-                            {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
-                        ],
+                    "thumbnail": {"url": f"{self.img}"},
 
-                        "thumbnail": {"url": f"{self.img}"},
-
-                        "footer": {
-                            "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
-                        },
-                    }
-                ],
-            )
+                    "footer": {
+                        "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
+                    },
+                }
+            ],
+        )
 

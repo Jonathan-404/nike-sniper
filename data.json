@@ -371,11 +371,8 @@
             "sizes": [
                 "36",
                 "36.5",
-                "37.5",
                 "38",
-                "38.5",
                 "39",
-                "40",
                 "40.5"
             ],
             "stock": "In Stock"
@@ -390,7 +387,6 @@
                 "36.5",
                 "38",
                 "38.5",
-                "39",
                 "40",
                 "40.5",
                 "42"
@@ -470,8 +466,7 @@
             "img": "https://cdn.shopify.com/s/files/1/0659/0713/0614/products/jd_597247_a_7c31da95-4655-40b5-bd2c-f0fb3dcc1039_1800x.jpg?v=1680171053",
             "price": "449.90",
             "sizes": [
-                "36",
-                "38"
+                "36"
             ],
             "stock": "In Stock"
         },
@@ -946,6 +941,32 @@
             "name": "Nike Dunk High By You",
             "url": "https://www.nike.com/il/u/custom-nike-dunk-high-by-you-shoes-10001378/2841795202",
             "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/14026614-c63f-4f7f-b3fc-758e557818ba/custom-nike-dunk-high-by-you-shoes.jpg",
+            "price": 599.9,
+            "sizes": [
+                "38.5",
+                "39",
+                "40",
+                "40.5",
+                "41",
+                "42",
+                "42.5",
+                "43",
+                "44",
+                "44.5",
+                "45",
+                "45.5",
+                "46",
+                "47",
+                "47.5",
+                "48.5",
+                "49.5"
+            ],
+            "stock": "In Stock"
+        },
+        {
+            "name": "Nike Dunk Low Unlocked By You",
+            "url": "https://www.nike.com/il/u/custom-dunk-low-unlocked-by-you-10001544/7590706323",
+            "img": "https://static.nike.com/a/images/ar_4:5,c_pad,w_400,f_auto/t_product_v1/5d87a2db-0b92-4638-b98c-33f876a6581c/custom-dunk-low-unlocked-by-you.jpg",
             "price": 599.9,
             "sizes": [
                 "38.5",

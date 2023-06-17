@@ -2,11 +2,11 @@
 
 
 discord_webhooks = {
-    'nike' : "https://discord.com/api/webhooks/1118874531168268358/966_nlAKOD7ATiABiOHwPyOnc_khRQPQCC-39vXc1jKeEqd4OwJ4NXUB5UMj0u5MdKg0",
-    'jd_sports' : "https://discord.com/api/webhooks/1118876220793290853/yXMwKa2DOqWho-MhWDxs2rndqGp8vEYSufUQ0OATA-xNVahaGXeXJnNk7GSBjWnzI2pZ",
-    'sneakerboxtlv' : "https://discord.com/api/webhooks/1118876458761330749/A9GjpGzrXrkKZwljTxjm2osALufaOCthbpRJ0bg-TleK0zg3OnrrCRdmMcTRjOWNCPvN",
-    'terminal_x' : "https://discord.com/api/webhooks/1118876632770433194/xiA0gxn-NSq25lqMZdqfE7keXtmJ1L5uXWHkdZdq2CLUZ0AVVhswApK99CJWVLQ0q8W3",
-    'notforsale' : 'https://discord.com/api/webhooks/1118877115048272082/4qsa49SP-i1kRBM-Za_pTUgX5GPytqOsRqce2Fn_dcJ7QEZqZKH26s3lIttma5SBD4ZQ'
+    'nike' : "https://discord.com/api/webhooks/1118998274905477161/XumU_0wvLjCukNSkWO7mX6RPLw3cat4CiZXWhfUzn5pzRlvK0vubhLqRYhgl94cpligQ",
+    'jd_sports' : "https://discord.com/api/webhooks/1118998371605155840/oJPsqnORTp_gEw4q9xr2zihrSAPxYQrUn6I5ZyUuqUPj64tx3p_eOoWwCNS7C0TW1OPC",
+    'sneakerboxtlv' : "https://discord.com/api/webhooks/1118997990938517696/kkq1zWqhzTwg02HsytRvh7ZFS27v6jSJ5az9BFbTaEE_GkfJchFg9G522vhvC_1xNWyL",
+    'terminal_x' : "https://discord.com/api/webhooks/1118997236379033741/R-CpIkUt5STjdyV9VKJ_f7HS0yYoMI8QGV2bxVRb8udxkdNqRab82qhbicF5hu0Fww4E",
+    'notforsale' : 'https://discord.com/api/webhooks/1118998803270348811/ZREryxDXIVdAGrguDDwXhNesPzYLToZ34cO78MrNZH6pDL1bTOHg_twoZysujYXxeX7j'
 }
 
 

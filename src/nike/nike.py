@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import concurrent.futures
 from src.Shoe import Shoe
 from src.utils import *
+import multiprocessing
 
 ANCHOR_OFFSET = 24
 NOT_EXIST = -1

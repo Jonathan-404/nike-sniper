@@ -50,7 +50,7 @@ class Shoe:
                     "thumbnail": {"url": f"{self.img}"},
 
                     "footer": {
-                        "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
+                        "text": "All rights reserved to SneakMonitor",
                     },
                 }
             ],
@@ -103,7 +103,7 @@ class Shoe:
                     "thumbnail": {"url": f"{self.img}"},
 
                     "footer": {
-                        "text": "All rights reserved to @Joe#6715 and @0rphan#6372",
+                        "text": "All rights reserved to SneakMonitor",
                     },
                 }
             ],

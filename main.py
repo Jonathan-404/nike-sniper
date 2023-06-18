@@ -24,6 +24,7 @@ nike_url = "https://www.nike.com/il/w/mens-shoes-nik1zy7ok"
 
 
 def main():
+    print("Starting...")
     while True:
 
         processes = []  # List to store the processes

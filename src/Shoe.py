@@ -1,7 +1,7 @@
 from discordwebhook import Discord
 import json
 
-from keys import discord_webhooks
+from keys import discord_webhook
 
 
 class Shoe:
@@ -25,7 +25,7 @@ class Shoe:
 
     def discord_message(self):
 
-        discord = Discord(url=discord_webhooks[self.site])
+        discord = Discord(url=discord_webhook)
         discord.post(embeds=[
                 {
                     "color": 0x00ff00,
@@ -76,7 +76,7 @@ class Shoe:
             json.dump(file_data, file, indent=4)
 
     def update_sizes_message(self, added_sizes, removed_sizes):
-        discord = Discord(url=discord_webhooks[self.site])
+        discord = Discord(url=discord_webhook)
         discord.post(embeds=[
                 {
                     "color": 0x00ff00,

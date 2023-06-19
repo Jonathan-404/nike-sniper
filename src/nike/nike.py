@@ -10,6 +10,7 @@ import multiprocessing
 ANCHOR_OFFSET = 24
 NOT_EXIST = -1
 
+
 def process_first_products(product_div):
     link_elem = product_div.find('a', class_='product-card__link-overlay')
     link = link_elem['href'] if link_elem else None

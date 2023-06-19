@@ -64,6 +64,7 @@ class Shoe:
             file.truncate()
             json.dump(file_data, file, indent=4)
 
+
     def update_sizes(self, sizes):
         with open("data.json", 'r+') as file:
             file_data = json.load(file)

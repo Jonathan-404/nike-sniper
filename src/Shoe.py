@@ -1,7 +1,7 @@
 from discordwebhook import Discord
 import json
 
-from keys import discord_webhook
+from keys import discord_webhooks
 
 
 class Shoe:
@@ -25,7 +25,7 @@ class Shoe:
 
     def discord_message(self):
 
-        discord = Discord(url=discord_webhook)
+        discord = Discord(url=discord_webhooks[self.site])
         discord.post(embeds=[
                 {
                     "color": 0x00ff00,
@@ -44,13 +44,13 @@ class Shoe:
                         {"name": "Product Name", "value": self.name, "inline": True},
                         {"name": "Price", "value": f"{self.price} ILS", "inline": True},
                         {"name": "Status", "value": "In Stock"},
-                        {"name": "Available Sizes", "value": f"{' '.join(self.sizes)}"},
+                        {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
                     ],
 
                     "thumbnail": {"url": f"{self.img}"},
 
                     "footer": {
-                        "text": "All rights reserved to SneakMonitor",
+                        "text": "SneakMonitor by Ori Friedman    [TEST]",
                     },
                 }
             ],
@@ -64,7 +64,6 @@ class Shoe:
             file.truncate()
             json.dump(file_data, file, indent=4)
 
-
     def update_sizes(self, sizes):
         with open("data.json", 'r+') as file:
             file_data = json.load(file)
@@ -76,8 +75,8 @@ class Shoe:
             file.truncate()
             json.dump(file_data, file, indent=4)
 
-    def update_sizes_message(self, added_sizes):
-        discord = Discord(url=discord_webhook)
+    def update_sizes_message(self, added_sizes, removed_sizes):
+        discord = Discord(url=discord_webhooks[self.site])
         discord.post(embeds=[
                 {
                     "color": 0x00ff00,
@@ -96,16 +95,16 @@ class Shoe:
                         {"name": "Product Name", "value": self.name, "inline": True},
                         {"name": "Price", "value": f"{self.price} ILS", "inline": True},
                         {"name": "Status", "value": "In Stock"},
-                        {"name": "New Sizes:", "value": f"{' '.join(added_sizes)}"},
-                        {"name": "Available Sizes:", "value": f"{' '.join(self.sizes)}"},
+                        {"name": "Added Sizes", "value": f"{' '.join(added_sizes)}", "inline": True},
+                        {"name": "Removed Sizes", "value": f"{' '.join(removed_sizes)}", "inline": True},
+                        {"name": "Sizes", "value": f"{' '.join(self.sizes)}"},
                     ],
 
                     "thumbnail": {"url": f"{self.img}"},
 
                     "footer": {
-                        "text": "All rights reserved to SneakMonitor",
+                        "text": "SneakMonitor by Ori Friedman    [TEST]",
                     },
                 }
             ],
         )
-

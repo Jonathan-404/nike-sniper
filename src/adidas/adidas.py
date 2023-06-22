@@ -34,8 +34,7 @@ def get(url: str, keywords: list):
 
             link_and_name_element = shoe_details.find('div', class_='pdp-link').find('a')
             product_url = 'https://www.adidas.co.il' + link_and_name_element['href']
-            product_name = link_and_name_element.text
-
+            product_name = link_and_name_element.text.strip()
             price_element = shoe_details.find('div', class_='price')
             sales = price_element.find('span', class_='sales')
 
@@ -49,12 +48,14 @@ def get(url: str, keywords: list):
             product_sizes = []
             product_content = requests.get(product_url, headers=headers).content
             soup = BeautifulSoup(product_content, 'html.parser')
-            sizes_blocks = soup.find('div', class_='radio-group size-tabs').find_all('div', class_='size-radio')
+            sizes_blocks = soup.find('div', class_='radio-group size-tabs')
+            if sizes_blocks:
+                sizes_blocks = sizes_blocks.find_all('div', class_='size-radio')
 
-            for size_block in sizes_blocks:
-                if 'disabled' not in size_block.get('class', []):
-                    current_size = size_block.find('span', class_='size-value').text
-                    product_sizes.append(current_size)
+                for size_block in sizes_blocks:
+                    if 'disabled' not in size_block.get('class', []):
+                        current_size = size_block.find('span', class_='size-value').text
+                        product_sizes.append(current_size)
 
             shoe = Shoe("adidas", product_name, product_url, product_price, product_image, product_sizes)
             for keyword in keywords:

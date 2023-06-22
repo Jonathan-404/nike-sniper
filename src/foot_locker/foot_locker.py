@@ -1,5 +1,5 @@
 # from sites.foot_locker.scarpe_functions import scrape_product_price, scrape_product_image, scrape_product_sizes
-from webhook_manager import new_shoe_message
+
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -28,7 +28,7 @@ headers = {
 }
 
 
-res = requests.get("https://www.footlocker.co.il/men/cat?category_id=60dc6b043191a1000854a462&limit=300&offset=16", headers=headers).content
+res = requests.get("https://www.adidas.co.il/on/demandware.store/Sites-adidas-IL-Site/he_IL/Search-UpdateGrid?cgid=Men-sneakers&pmin=0.01&start=48&sz=24&selectedUrl=https%3A%2F%2Fwww.adidas.co.il%2Fon%2Fdemandware.store%2FSites-adidas-IL-Site%2Fhe_IL%2FSearch-UpdateGrid%3Fcgid%3DMen-sneakers%26pmin%3D0.01%26start%3D24%26sz%3D24"   ).content
 print(res)
 
 

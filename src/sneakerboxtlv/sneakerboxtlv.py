@@ -4,7 +4,6 @@ import requests
 from ..sneakerboxtlv.scarpe_functions import get_image, get_sizes
 from ..utils import get_urls, get_stored_sizes, check_for_updates
 from ..Shoe import Shoe
-
 """
 SITE ALGORITHM STARTS HERE
 
@@ -59,3 +58,7 @@ def get(url: str, keywords: list):
                             check_for_updates(sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
 
         offset += 24
+
+
+
+

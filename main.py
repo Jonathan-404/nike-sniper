@@ -55,6 +55,7 @@ def main():
         # Wait for all processes to finish
         for process in processes:
             process.join()
+            print("Process finished " + str(process.name))
 
 
 if __name__ == "__main__":

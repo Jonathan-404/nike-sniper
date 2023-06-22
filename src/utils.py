@@ -22,9 +22,14 @@ def check_for_updates(sizes, stored_sizes, shoe):
     if len(sizes) > len(stored_sizes):
         added = [i for i in sizes if i not in stored_sizes]
         shoe.update_sizes(sizes)
+        if len(stored_sizes) == 0:
+            shoe.discord_message()
         shoe.update_sizes_message(added_sizes=added, removed_sizes=[])
 
     elif len(sizes) < len(stored_sizes):
         removed = [i for i in stored_sizes if i not in sizes]
-        shoe.update_sizes(sizes)
-        shoe.update_sizes_message(added_sizes=[], removed_sizes=removed)
+        if len(removed) == len(stored_sizes):
+            shoe.update_sizes(sizes)
+        else:
+            shoe.update_sizes(sizes)
+            shoe.update_sizes_message(added_sizes=[], removed_sizes=removed)

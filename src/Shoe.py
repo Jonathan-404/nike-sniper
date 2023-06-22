@@ -50,7 +50,7 @@ class Shoe:
                         "thumbnail": {"url": f"{self.img}"},
 
                         "footer": {
-                            "text": "SneakMonitor by Ori Friedman    [TEST]",
+                            "text": "SneakMonitor by Ori Friedman",
                         },
                     }
                 ],
@@ -104,7 +104,7 @@ class Shoe:
                         "thumbnail": {"url": f"{self.img}"},
 
                         "footer": {
-                            "text": "SneakMonitor by Ori Friedman    [TEST]",
+                            "text": "SneakMonitor by Ori Friedman",
                         },
                     }
                 ],

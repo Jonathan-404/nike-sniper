@@ -8,6 +8,7 @@ from src.terminal_x import terminal_x
 from src.sneakerboxtlv import sneakerboxtlv
 from src.notforsale import notforsale
 from src.nike import nike
+from src.adidas import adidas
 # from src.factory_54 import factory_54
 
 
@@ -21,7 +22,7 @@ sneakerboxtlv_url = "https://sneakerboxtlv.com/wp-admin/admin-ajax.php"
 notforsale_url = "https://notforsaletlv.com/collections/sneakers?page="
 nike_url = "https://www.nike.com/il/w/mens-shoes-nik1zy7ok"
 # factory_54_url = ["https://www.factory54.co.il/men-shoes-sneakers?start="]
-
+adidas_url = 'https://www.adidas.co.il/he/men-sneakers'
 
 def main():
     print("Starting...")
@@ -47,6 +48,9 @@ def main():
 
         nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords))
         processes.append(nike_api_process)
+
+        adidas_process = Process(target=adidas.get, args=(adidas_url, keywords))
+        processes.append(adidas_process)
 
         # Start all processes
         for process in processes:

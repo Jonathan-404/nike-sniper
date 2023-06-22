@@ -1,8 +1,6 @@
-from bs4 import BeautifulSoup
-import requests
 import json
 
-def scrape_product_sizes(product_content):
+def get_sizes(product_content):
     sizes = []
 
     product_content = json.loads(product_content)

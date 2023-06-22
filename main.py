@@ -8,12 +8,8 @@ from src.terminal_x import terminal_x
 from src.sneakerboxtlv import sneakerboxtlv
 from src.notforsale import notforsale
 from src.nike import nike
+from src.factory_54 import factory_54
 from src.adidas import adidas
-# from src.factory_54 import factory_54
-
-
-
-
 
 # sites urls
 jd_sports_urls = ["https://www.jdsports.co.il/collections/men-shoes-sneakers?page=", "https://www.jdsports.co.il/collections/women-shoes-sneakers?page="]
@@ -21,8 +17,9 @@ terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes?p="
 sneakerboxtlv_url = "https://sneakerboxtlv.com/wp-admin/admin-ajax.php"
 notforsale_url = "https://notforsaletlv.com/collections/sneakers?page="
 nike_url = "https://www.nike.com/il/w/mens-shoes-nik1zy7ok"
-# factory_54_url = ["https://www.factory54.co.il/men-shoes-sneakers?start="]
-adidas_url = 'https://www.adidas.co.il/he/men-sneakers'
+factory_54_url = "https://www.factory54.co.il/men-shoes-sneakers?start="
+adidas_url = "https://www.adidas.co.il/he/men-sneakers"
+
 
 def main():
     print("Starting...")
@@ -31,25 +28,28 @@ def main():
         processes = []  # List to store the processes
 
         # Create and start the processes
-        jd_sports_process = Process(target=jd_sports.get, args=(jd_sports_urls, keywords))
+        jd_sports_process = Process(target=jd_sports.get, args=(jd_sports_urls, keywords), name="jd_sports")
         processes.append(jd_sports_process)
 
-        terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url, keywords))
+        terminal_x_process = Process(target=terminal_x.get, args=(terminal_x_url, keywords), name="terminal_x")
         processes.append(terminal_x_process)
 
-        sneakerboxtlv_process = Process(target=sneakerboxtlv.get, args=(sneakerboxtlv_url, keywords))
+        sneakerboxtlv_process = Process(target=sneakerboxtlv.get, args=(sneakerboxtlv_url, keywords), name="sneakerboxtlv")
         processes.append(sneakerboxtlv_process)
 
-        notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords))
+        notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords), name="notforsale")
         processes.append(notforsale_process)
 
-        nike_first_process = Process(target=nike.get_first, args=(nike_url, keywords))
+        nike_first_process = Process(target=nike.get_first, args=(nike_url, keywords), name="nike_first")
         processes.append(nike_first_process)
 
-        nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords))
+        nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords), name="nike_api")
         processes.append(nike_api_process)
 
-        adidas_process = Process(target=adidas.get, args=(adidas_url, keywords))
+        factory_54_process = Process(target=factory_54.get, args=(factory_54_url, keywords), name="factory_54")
+        processes.append(factory_54_process)
+
+        adidas_process = Process(target=adidas.get, args=(adidas_url, keywords), name="adidas")
         processes.append(adidas_process)
 
         # Start all processes

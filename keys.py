@@ -9,11 +9,12 @@ discord_webhooks = {
     'sneakerboxtlv': ["https://discord.com/api/webhooks/1121054583859449927/HpC97Kti4xzTOxdK6EETu9UkQxObM86KyUVEfFsxTAQT2nOzrJ-mo9H3QdYcc7i_aEn5", "https://discord.com/api/webhooks/1121088681395097702/A_WaGYj-z4XaADMLMuwMFUbDRYtAcfNAnZyyO7T6Jitm-igbyQmsYkmBtrN76dA1gWuq"],
     'terminal_x': ["https://discord.com/api/webhooks/1121054434466734120/mRqR7pt1NXhJfuA1d1GaGOc58M8l8V4o6V3-by9hi_MSneq7m4Zqv8RVEqvA40lLY9RX", "https://discord.com/api/webhooks/1121088573664411648/7esrCyJoASCgCIVN7DFfuGNUxMMXFI6I4XluPvu3i5IbCFekQHHArPVgrEo8qPhkEdYv"],
     'notforsale': ["https://discord.com/api/webhooks/1121054587193929788/cNBnCklGkS94QM89zYA1g0HSoghvo0GzvWIoAEwaORhXt7iW7wryA9O2T-uiuypPt0Ws", "https://discord.com/api/webhooks/1121088913751167046/kOn2LCDuqQdwsDydFCycdG-mgVn_ttAr3RHocV3y77Z-eS2oatOhnarqafH4GG7Q_r81"],
+    'factory_54': ["https://discord.com/api/webhooks/1121441665144602624/VHscIjKphHK1ikD-O6HLfGJDwV--CSSRfpI2B3jbwJrxOgKaPfYnj77oE4J0NLhcHNKc", "https://discord.com/api/webhooks/1121442440834977803/2Tb5bfUo_bU8fMg_03B29pbuL8HO_OFjVb_9dhWRnyHikF_FOEZxnWcGTy84nvyjQ0Bb"],
     'adidas': ['https://discord.com/api/webhooks/1121464657404760094/Pg-V0t5FDCKPQSDA6j3fWmbX38HcjG_iH4HxzKBa4tHWGnm0KdHY_PN_ZrIymP_M5Jeb', 'https://discord.com/api/webhooks/1121463791608144043/YcVRroUk0_8d-qTQEpRo7eUFy1qEWf3BvpMLZLL41gDmUjgWa4sYpDjglk-mX0mFgmYN']
 }
 
 
 # keywords to look for (list)
-keywords = ['Yeezy', 'YEEZY', 'Jordan', 'JORDAN', 'Dunk', 'DUNK', 'SB', 'Campus', 'CAMPUS', 'Supreme', 'SUPREME', 'Foam', 'FOAM', 'Off White', 'OFF WHITE']
+keywords = ['CONVERSE', 'Yeezy', 'YEEZY', 'Jordan', 'JORDAN', 'Dunk', 'DUNK', 'SB', 'Campus', 'CAMPUS', 'Supreme', 'SUPREME', 'Foam', 'FOAM', 'Off White', 'OFF WHITE']
 
 

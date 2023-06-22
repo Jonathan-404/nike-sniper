@@ -45,6 +45,10 @@ def get(url: str, keywords: list):
                         sizes = get_sizes(sec_soup)
                         image = get_image(sec_soup).strip()
 
+                        if sizes == []:
+                            continue
+
+
                         shoe = Shoe("sneakerboxtlv", name, p_url, price, image, sizes)
 
                         if p_url not in urls:

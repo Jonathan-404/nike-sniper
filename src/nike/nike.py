@@ -47,20 +47,16 @@ def get_first(url: str, keywords: list):
     products_divs = soup.find_all('div', class_='product-card__body')
     urls = get_urls("nike")
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        futures = [executor.submit(process_first_products, product_div) for product_div in products_divs]
+    for product_div in products_divs:
+        shoe = process_first_products(product_div)
 
-        for future in concurrent.futures.as_completed(futures):
-            result = future.result()
-            if result:
-                shoe = result
-
-                for keyword in keywords:
-                    if keyword in shoe.name:
-                        if shoe.url not in urls:
-                            shoe.discord_message()
-                            shoe.update()
-                            urls.append(shoe.url)
+        if shoe:
+            for keyword in keywords:
+                if keyword in shoe.name:
+                    if shoe.url not in urls:
+                        shoe.discord_message()
+                        shoe.update()
+                        urls.append(shoe.url)
 
 
 
@@ -96,24 +92,23 @@ def get_api(url: str, keywords: list):
             total_products = int(parse_response[index + 1][1:-1])
         index += 1
 
-    with concurrent.futures.ThreadPoolExecutor() as executor:
-        while anchor < total_products:
-            response = requests.get(api_url)
-            api_data = response.json()
+    while anchor < total_products:
+        response = requests.get(api_url)
+        api_data = response.json()
 
-            products = api_data["data"]["products"]["products"]
-            futures = [executor.submit(process_api_product_info, product) for product in products]
+        products = api_data["data"]["products"]["products"]
 
-            for future in concurrent.futures.as_completed(futures):
-                result = future.result()
-                if result:
-                    shoe = result
-                    for keyword in keywords:
-                        if keyword in shoe.name:
-                            if shoe.url not in urls:
-                                shoe.discord_message()
-                                shoe.update()
-                                urls.append(shoe.url)
+
+        for product in products:
+
+            shoe = process_api_product_info(product)
+            if shoe:
+                for keyword in keywords:
+                    if keyword in shoe.name:
+                        if shoe.url not in urls:
+                            shoe.discord_message()
+                            shoe.update()
+                            urls.append(shoe.url)
 
 
             anchor += ANCHOR_OFFSET

@@ -40,11 +40,8 @@ def main():
         notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords), name="notforsale")
         processes.append(notforsale_process)
 
-        nike_first_process = Process(target=nike.get_first, args=(nike_url, keywords), name="nike_first")
-        processes.append(nike_first_process)
-
-        nike_api_process = Process(target=nike.get_api, args=(nike_url, keywords), name="nike_api")
-        processes.append(nike_api_process)
+        nike_process = Process(target=nike.get, args=(nike_url, keywords), name="nike")
+        processes.append(nike_process)
 
         factory_54_process = Process(target=factory_54.get, args=(factory_54_url, keywords), name="factory_54")
         processes.append(factory_54_process)

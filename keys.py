@@ -16,6 +16,6 @@ discord_webhooks = {
 
 
 # keywords to look for (list)
-keywords = ['CONVERSE', 'Yeezy', 'YEEZY', 'Jordan', 'JORDAN', 'Dunk', 'DUNK', 'SB', 'Campus', 'CAMPUS', 'Supreme', 'SUPREME', 'Foam', 'FOAM', 'Off White', 'OFF WHITE']
+keywords = ['Yeezy', 'yeezy', 'Jordan', 'jordan', 'Dunk', 'dunk', 'SB', 'Campus', 'campus', 'Supreme', 'supreme', 'Foam', 'foam', 'Off White', 'off white']
 
 

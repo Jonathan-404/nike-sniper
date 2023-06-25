@@ -1,8 +1,9 @@
-# from sites.foot_locker.scarpe_functions import scrape_product_price, scrape_product_image, scrape_product_sizes
-
-from bs4 import BeautifulSoup
 import requests
-import json
+from bs4 import BeautifulSoup
+import concurrent.futures
+from src.Shoe import Shoe
+from src.utils import *
+import re
 
 """
 SITE ALGORITHM STARTS HERE
@@ -28,17 +29,81 @@ headers = {
 }
 
 
-res = requests.get("https://www.adidas.co.il/on/demandware.store/Sites-adidas-IL-Site/he_IL/Search-UpdateGrid?cgid=Men-sneakers&pmin=0.01&start=48&sz=24&selectedUrl=https%3A%2F%2Fwww.adidas.co.il%2Fon%2Fdemandware.store%2FSites-adidas-IL-Site%2Fhe_IL%2FSearch-UpdateGrid%3Fcgid%3DMen-sneakers%26pmin%3D0.01%26start%3D24%26sz%3D24"   ).content
-print(res)
 
 
-def new_product_urls(url: str, keywords: list):
-    pass
+def scrape_details(product_url):
+
+    response = requests.get(product_url, headers=headers).content
+    soup = BeautifulSoup(response, 'html.parser')
+    product_name = soup.find('h1', class_='product-name ng-star-inserted')
+    product_sizes = []
+    product_img = ''
+
+    price_element = soup.find('div', class_='discount ng-star-inserted')
+    if price_element:
+        product_price = price_element.find('h3').text.replace('₪', '').strip()
+    else:
+        print(product_url)
+        product_price = soup.find('div', class_='ng-star-inserted').find('h3').text
+        print(product_price)
+
+    img_element = soup.find('div', class_='_ngcontent-serverapp-c9')
+
+    if img_element:
+        style_attribute = img_element['style']
+        product_img = style_attribute.split('url("')[1].split('")')[0]
+
+    size_elements = soup.find('div', class_='container-size').find_all('div', class_='p-size has-tooltip ng-star-inserted chosen')
+
+    for size_element in size_elements:
+        if 'disabled' not in size_element.get('class'):
+            eu_size = size_element.find('span', {'tuafontsizes': '12'}).text
+            product_sizes.append(eu_size)
+
+    return Shoe('footlocker', product_name, product_url, product_price, product_img, product_sizes)
+
+def get(url: str, keywords: list):
+    urls = []
 
 
-def update_products_json_file(company_name: str, product_data: dict):
-    with open("data.json", 'r+') as file:
-        file_data = json.load(file)
-        file_data[company_name].append(product_data)
-        file.seek(0)
-        json.dump(file_data, file, indent=4)
+    for keyword in keywords:
+
+        offset = 0
+        first_response = requests.get(f'https://www.footlocker.co.il/api/v1/search?name={keyword}&offset={offset}', headers=headers).content
+        data = json.loads(first_response)
+        total_count = int(data['products']['total_count'])
+        print(total_count)
+
+        for i in range((total_count // 16) + 1):
+            url = f'https://www.footlocker.co.il/api/v1/search?name={keyword}&offset={offset}'
+            response = str(requests.get(url, headers=headers).content.decode())
+            pattern = r'"id":"([^"]+)"\s*,\s*"sku_model":"([^"]+)"'
+            shoes_per_page = 0
+            matches = re.findall(pattern, response)
+
+            for match in matches:
+                id = match[0]
+                sku_model = match[1]
+                product_url = f'https://www.footlocker.co.il/{sku_model}/prd/{id}'
+                shoes_per_page += 1
+
+                shoe = scrape_details(product_url)
+                if shoe.sizes:
+                    if shoe.url not in urls:
+                        print(shoe.name)
+                        print(shoe.url)
+                        print(shoe.img)
+                        print(shoe.price)
+                        print(shoe.sizes)
+                        #shoe.discord_message()
+                        #shoe.update()
+                        #urls.append(shoe.url)
+                    else:
+                        X = 2
+                        #check_for_updates(shoe.sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
+
+            offset += shoes_per_page
+
+
+get('', ['dunk', 'air'])
+

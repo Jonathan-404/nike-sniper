@@ -47,6 +47,7 @@ def get(url: str, keywords: list):
             for product in products:
                 shoe = process_api_product_info(product)
                 if shoe and shoe.sizes:
+
                     if shoe.url not in urls:
                         shoe.discord_message()
                         shoe.update()

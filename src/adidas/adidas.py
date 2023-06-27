@@ -27,7 +27,6 @@ def get(url: str, keywords: list):
         for i in range(num_of_pages):
             content = requests.get(f"https://www.adidas.co.il/on/demandware.store/Sites-adidas-IL-Site/he_IL/Search-UpdateGrid?cgid={keyword}&pmin=0.01&searchtrigger=shownext&start={shoes_per_page}&sz=24&selectedUrl=https%3A%2F%2Fwww.adidas.co.il%2Fon%2Fdemandware.store%2FSites-adidas-IL-Site%2Fhe_IL%2FSearch-UpdateGrid%3Fcgid%3D{keyword}%26pmin%3D0.01%26searchtrigger%3Dshownext%26start%3D{shoes_per_page}%26sz%3D24", headers=headers).content
             soup = BeautifulSoup(content, 'html.parser')
-
             details_divs = soup.find_all('div', class_='tile-body')
             image_containers = soup.find_all('div', class_='image-container')
 
@@ -69,3 +68,5 @@ def get(url: str, keywords: list):
                     else:
                         check_for_updates(shoe.sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
             shoes_per_page += 24
+
+get('', ['campus'])

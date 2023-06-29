@@ -16,9 +16,9 @@ jd_sports_urls = ["https://www.jdsports.co.il/collections/men-shoes-sneakers?pag
 terminal_x_url = "https://www.terminalx.com/men/shoes/sneakers-shoes?p="
 sneakerboxtlv_url = "https://sneakerboxtlv.com/wp-admin/admin-ajax.php"
 notforsale_url = "https://notforsaletlv.com/collections/sneakers?page="
-nike_url = "https://www.nike.com/il/w/mens-shoes-nik1zy7ok"
 factory_54_url = "https://www.factory54.co.il/men-shoes-sneakers?start="
 adidas_url = "https://www.adidas.co.il/he/men-sneakers"
+
 
 
 def main():
@@ -40,7 +40,7 @@ def main():
         notforsale_process = Process(target=notforsale.get, args=(notforsale_url, keywords), name="notforsale")
         processes.append(notforsale_process)
 
-        nike_process = Process(target=nike.get, args=(nike_url, keywords), name="nike")
+        nike_process = Process(target=nike.get, args=(keywords), name="nike")
         processes.append(nike_process)
 
         factory_54_process = Process(target=factory_54.get, args=(factory_54_url, keywords), name="factory_54")

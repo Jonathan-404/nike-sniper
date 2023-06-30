@@ -4,6 +4,7 @@ import concurrent.futures
 from src.Shoe import Shoe
 from src.utils import *
 import re
+import time
 
 """
 SITE ALGORITHM STARTS HERE
@@ -11,7 +12,7 @@ SITE ALGORITHM STARTS HERE
 SITE NAME: Foot Locker
 """
 
-#
+
 headers = {
     "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.",
     "accept-encoding": "gzip, deflate, br",
@@ -35,7 +36,7 @@ def scrape_details(product_url):
 
     response = requests.get(product_url, headers=headers).content
     soup = BeautifulSoup(response, 'html.parser')
-    product_name = soup.find('h1', class_='product-name ng-star-inserted')
+    product_name = soup.find('div', class_='product-right ng-star-inserted').find('h1', class_='product-name ng-star-inserted').text
     product_sizes = []
     product_img = ''
 
@@ -44,8 +45,10 @@ def scrape_details(product_url):
         product_price = price_element.find('h3').text.replace('₪', '').strip()
     else:
         print(product_url)
-        product_price = soup.find('div', class_='ng-star-inserted').find('h3').text
-        print(product_price)
+        if soup.find('div', class_='price ng-star-inserted').find('div', class_='ng-star-inserted').find('h3'):
+            product_price = soup.find('div', class_='price ng-star-inserted').find('div', class_='ng-star-inserted').find('h3').text
+        else:
+            return None
 
     img_element = soup.find('div', class_='_ngcontent-serverapp-c9')
 
@@ -54,8 +57,9 @@ def scrape_details(product_url):
         product_img = style_attribute.split('url("')[1].split('")')[0]
 
     size_elements = soup.find('div', class_='container-size').find_all('div', class_='p-size has-tooltip ng-star-inserted chosen')
-
+    print('size element', size_elements)
     for size_element in size_elements:
+
         if 'disabled' not in size_element.get('class'):
             eu_size = size_element.find('span', {'tuafontsizes': '12'}).text
             product_sizes.append(eu_size)
@@ -70,9 +74,10 @@ def get(url: str, keywords: list):
 
         offset = 0
         first_response = requests.get(f'https://www.footlocker.co.il/api/v1/search?name={keyword}&offset={offset}', headers=headers).content
+        print(f'https://www.footlocker.co.il/api/v1/search?name={keyword}&offset={offset}')
         data = json.loads(first_response)
+
         total_count = int(data['products']['total_count'])
-        print(total_count)
 
         for i in range((total_count // 16) + 1):
             url = f'https://www.footlocker.co.il/api/v1/search?name={keyword}&offset={offset}'
@@ -88,7 +93,7 @@ def get(url: str, keywords: list):
                 shoes_per_page += 1
 
                 shoe = scrape_details(product_url)
-                if shoe.sizes:
+                if shoe:
                     if shoe.url not in urls:
                         print(shoe.name)
                         print(shoe.url)
@@ -105,5 +110,5 @@ def get(url: str, keywords: list):
             offset += shoes_per_page
 
 
-get('', ['dunk', 'air'])
+get('', ['air'])
 

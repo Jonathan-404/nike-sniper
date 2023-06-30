@@ -4,11 +4,20 @@ import json
 def get_urls(site: str):
     urls = []
 
-    product_data_file = json.load(open("./data.json", "r"))
+    product_data_file = json.load(open("C:/Users/ליאם אוחיון/Desktop/nike-sniper/data.json", "r"))
     for product in product_data_file[site]:
         urls.append(product["url"])
 
     return urls
+
+def get_imgs(site: str):
+    imgs = []
+
+    product_data_file = json.load(open("C:/Users/ליאם אוחיון/Desktop/nike-sniper/data.json", "r"))
+    for product in product_data_file[site]:
+        imgs.append(product["img"])
+
+    return imgs
 
 def get_stored_sizes(site, url):
     with open("data.json", 'r+') as file:
@@ -16,6 +25,7 @@ def get_stored_sizes(site, url):
         for stored_shoe in file_data[site]:
             if stored_shoe["url"] == url:
                 return stored_shoe["sizes"]
+
 
 
 def check_for_updates(sizes, stored_sizes, shoe):

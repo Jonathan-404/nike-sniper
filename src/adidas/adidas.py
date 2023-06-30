@@ -12,7 +12,7 @@ headers = {
 
 def get(url: str, keywords: list):
 
-    urls = get_urls("adidas")
+    imgs = get_imgs("adidas")
     shoes_per_page = 0
 
     content = requests.get(url, headers=headers).content
@@ -61,13 +61,12 @@ def get(url: str, keywords: list):
 
             for keyword in keywords:
                 if keyword in shoe.name:
-                    if shoe.url not in urls and shoe.sizes and shoe.price:
+                    if shoe.img not in imgs and shoe.sizes and shoe.price:
                         shoe.discord_message()
                         shoe.update()
-                        urls.append(shoe.url)
+                        imgs.append(shoe.imgs)
                     else:
                         check_for_updates(shoe.sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
 
         shoes_per_page += 24
         page_url = f"https://www.adidas.co.il/on/demandware.store/Sites-adidas-IL-Site/he_IL/Search-UpdateGrid?cgid=Men-sneakers&pmin=0.01&searchtrigger=shownext&start={shoes_per_page}&sz=24&selectedUrl=https%3A%2F%2Fwww.adidas.co.il%2Fon%2Fdemandware.store%2FSites-adidas-IL-Site%2Fhe_IL%2FSearch-UpdateGrid%3Fcgid%3DMen-sneakers%26pmin%3D0.01%26searchtrigger%3Dshownext%26start%3D24%26sz%3D24"
-

@@ -18,7 +18,7 @@ headers = {
     "accept-encoding": "gzip, deflate, br",
     "accept-language": "he-IL,he;q=0.9,en-US;q=0.8,en;q=0.7",
     "cache-control": "max-age=0",
-    "cookie": "_gcl_au=1.1.774905418.1683127359; glassix-visitor-id-v2-44f1f8a2-a1a8-4b38-bdfc-8cd8cb881b20=0ece813f-1e03-4604-9499-1226c5ba58ac; _fbp=fb.2.1683127360567.381991064; _hjDonePolls=889094; _hjSessionUser_3393939=eyJpZCI6IjFhNTdmZDI0LTJjYjUtNTljYi1hNmE5LWIzZjRjMDk3Y2RlZCIsImNyZWF0ZWQiOjE2ODMxMjczNjAxOTksImV4aXN0aW5nIjp0cnVlfQ==; _gid=GA1.3.1209728225.1683354004; _hjIncludedInSessionSample_3393939=1; _hjSession_3393939=eyJpZCI6ImQ0ODhkMjQ3LTlhYzEtNGUxMC05NmZiLTI3ZGM4MzdkYzk2MiIsImNyZWF0ZWQiOjE2ODMzNTQwMDg2MTYsImluU2FtcGxlIjp0cnVlfQ==; _hjAbsoluteSessionInProgress=0; __za_cds_19763555=%7B%22data_for_campaign%22%3A%7B%22country%22%3A%22IL%22%2C%22language%22%3A%22UNSET%22%2C%22ip%22%3A%22109.66.156.55%22%2C%22start_time%22%3A1683354277000%2C%22session_groups%22%3A%7B%223237%22%3A%7B%22campaign_Id%22%3A%2280889%22%7D%2C%223238%22%3A%7B%22campaign_Id%22%3A%2280890%22%7D%7D%7D%7D; __za_19763555=%7B%22sId%22%3A6310020%2C%22dbwId%22%3A%221%22%2C%22sCode%22%3A%222a1d26236fed8a57d2f618ef812f5a8b%22%2C%22sInt%22%3A5000%2C%22na%22%3A2%2C%22td%22%3A1%2C%22ca%22%3A%221%22%7D; _ga=GA1.3.1424194023.1683127359; _gat_gtag_UA_197949286_1=1; _gat_UA-197949286-1=1; _immue=DMRzfJDHE4VNV3pxxQWbHW2pQOvyHYOBvP6sRlqwOXQQqIrAcffqAd6ND6LrdB%2FCtJ%2FY9mybRPEY7JUQLPZ8HdyAomrQA0S8eEeidLf9M%2FpsnQGdD%2BfrqR%2F0L27s8m1ZyJLvO9s4rVF%2F0R9tz3O3vuHiMgKH8v%2BZWYPO8qxYMtdgWqtuyXER9hFFRyqkGgtbJCw9rgdLFOcZ5yuvWoLJCQ%2BfHWBFVUaWMlBXRWxOTNh2%2FLmOrIO9Hro%2Fzl9IC8KWn47Idsmfq4pf%2B5xNvenFYFJHlFUhatLyyrE1xoQlnKutk%2FSmQ3gQm0T2eUc7fuTiOk1rYIudCFV1o0xNaC1Ta83TjtPZjHJ2VSBcRwW9sYesURPFNpx%2FnidxCJLW560DbnM4P%2BFguIL5A3vYxP%2BHof5hwzH0DGlsK3taXfDMxVpdlr2wAEe4jIyibJtWntmGWFuMxx46IlGkiU9qOfWgDHneZ5loSR1z%2FPDsQdMyE7M%3D; __za_cd_19763555=%7B%22visits%22%3A%22%5B1683354283%2C1683127361%5D%22%2C%22campaigns_status%22%3A%7B%2274959%22%3A1683354707%2C%2278311%22%3A1683354707%2C%2281114%22%3A1683128651%7D%7D; _ga_SLEJV4R8K1=GS1.1.1683354003.4.1.1683354708.58.0.0",
+    "cookie": "sh0TEc%2FhRIA2kiThL%2FFBcoWeM6i9YR77gXFBYVT0qzfL6gp%2FAiASG0AeA8HKOmsbvRylzYH8DzDfrlLZyQC3yU80NYnZ4yXcjJlQiRxsINGstqSCJyyNNUtsJqGpcr%2FrzXmaknXhtXxIweajrCMab4cJhBlTtIGLxJfqF4O9o4MqS9swE%2BWXaRYv%2B%2BH67i7sd9m%2BUnn%2BUmuPJgd6KKI%2FuSNI5P%2FLqMsi7qn5LG2Ff5XnFsIChEb8b8A9SowXWHJ59P2yEHL5KgI4J46gShrp9%2F2xBz3Cfjfg7UZBfqBqrfPfstvSbI7rUjXSqui%2Fgqd95rtdLT%2B1Ung62DDfEQ9257cshWW%2FlZxZGx0qLBtfvOIsk1gy4SLblgW7xSauXg%3D%3D",
     "sec-ch-ua": r"\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"",
     "sec-ch-ua-mobile": "?0",
     "sec-ch-ua-platform": "macOS",
@@ -32,19 +32,25 @@ headers = {
 
 
 
+
+
+def get_captcha_cookie(site_url):
+    pass
+
+
+
 def scrape_details(product_url):
 
     response = requests.get(product_url, headers=headers).content
+
     soup = BeautifulSoup(response, 'html.parser')
     product_name = soup.find('div', class_='product-right ng-star-inserted').find('h1', class_='product-name ng-star-inserted').text
     product_sizes = []
     product_img = ''
-
     price_element = soup.find('div', class_='discount ng-star-inserted')
     if price_element:
         product_price = price_element.find('h3').text.replace('₪', '').strip()
     else:
-        print(product_url)
         if soup.find('div', class_='price ng-star-inserted').find('div', class_='ng-star-inserted').find('h3'):
             product_price = soup.find('div', class_='price ng-star-inserted').find('div', class_='ng-star-inserted').find('h3').text
         else:
@@ -56,12 +62,13 @@ def scrape_details(product_url):
         style_attribute = img_element['style']
         product_img = style_attribute.split('url("')[1].split('")')[0]
 
-    size_elements = soup.find('div', class_='container-size').find_all('div', class_='p-size has-tooltip ng-star-inserted chosen')
-    print('size element', size_elements)
-    for size_element in size_elements:
+    size_container = soup.find('div', class_='container-size')
+    size_elements = size_container.find_all('div', class_='p-size has-tooltip ng-star-inserted')
+    size_elements.append(size_container.find('div', class_='p-size has-tooltip ng-star-inserted chosen'))
 
-        if 'disabled' not in size_element.get('class'):
-            eu_size = size_element.find('span', {'tuafontsizes': '12'}).text
+    for size_element in size_elements:
+        if size_element:
+            eu_size = size_element.find('span').text
             product_sizes.append(eu_size)
 
     return Shoe('footlocker', product_name, product_url, product_price, product_img, product_sizes)
@@ -94,18 +101,19 @@ def get(url: str, keywords: list):
 
                 shoe = scrape_details(product_url)
                 if shoe:
-                    if shoe.url not in urls:
-                        print(shoe.name)
-                        print(shoe.url)
-                        print(shoe.img)
-                        print(shoe.price)
-                        print(shoe.sizes)
-                        #shoe.discord_message()
-                        #shoe.update()
-                        #urls.append(shoe.url)
-                    else:
-                        X = 2
-                        #check_for_updates(shoe.sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
+                    if "נעלי" in shoe.name  or "סניקרס" in shoe.name or "נעליים" in shoe.name:
+                        if shoe.url not in urls:
+                            print(shoe.name)
+                            print(shoe.url)
+                            print(shoe.img)
+                            print(shoe.price)
+                            print(shoe.sizes)
+                            #shoe.discord_message()
+                            #shoe.update()
+                            #urls.append(shoe.url)
+                        else:
+                            X = 2
+                            #check_for_updates(shoe.sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
 
             offset += shoes_per_page
 

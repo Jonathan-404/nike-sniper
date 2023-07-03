@@ -4,7 +4,7 @@ import json
 def get_urls(site: str):
     urls = []
 
-    product_data_file = json.load(open("../data.json", "r"))
+    product_data_file = json.load(open("./data.json", "r"))
     for product in product_data_file[site]:
         urls.append(product["url"])
 
@@ -13,14 +13,14 @@ def get_urls(site: str):
 def get_imgs(site: str):
     imgs = []
 
-    product_data_file = json.load(open("../data.json", "r"))
+    product_data_file = json.load(open("./data.json", "r"))
     for product in product_data_file[site]:
         imgs.append(product["img"])
 
     return imgs
 
 def get_stored_sizes(site, url):
-    with open("../data.json", 'r+') as file:
+    with open("./data.json", 'r+') as file:
         file_data = json.load(file)
         for stored_shoe in file_data[site]:
             if stored_shoe["url"] == url:

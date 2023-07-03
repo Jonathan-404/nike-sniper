@@ -41,7 +41,7 @@ def get(url: str, keywords: list):
                 price = price[0]
 
             for keyword in keywords:
-                if keyword in name:
+                if keyword in name.lower():
                     sec_content = requests.get(p_url).content
                     sec_soup = BeautifulSoup(sec_content, 'html.parser')
                     sizes = get_sizes(sec_soup)

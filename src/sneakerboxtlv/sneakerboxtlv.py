@@ -36,7 +36,7 @@ def get(url: str, keywords: list):
                 p_url = product_children.find('a').get("href")
 
                 for keyword in keywords:
-                    if keyword in name:
+                    if keyword in name.lower():
                         sec_content = requests.get(p_url).content
                         sec_soup = BeautifulSoup(sec_content, 'html.parser')
 

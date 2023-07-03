@@ -19,7 +19,7 @@ def get(url: str, keywords: list):
         for product_children in product_parents:
             name = product_children.get('title')
             for keyword in keywords:
-                if keyword in name:
+                if keyword in name.lower():
                     p_url = f"https://www.terminalx.com/men/shoes/sneakers-shoes{product_children.find('a').get('href')}"
 
                     sec_content = requests.get(p_url).content

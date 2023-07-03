@@ -60,7 +60,7 @@ def get(url: str, keywords: list):
             shoe = Shoe("adidas", product_name, product_url, product_price, product_image, product_sizes)
 
             for keyword in keywords:
-                if keyword in shoe.name:
+                if keyword in shoe.name.lower():
                     if shoe.sizes and shoe.price:
                         if shoe.img not in imgs:
                             shoe.discord_message()

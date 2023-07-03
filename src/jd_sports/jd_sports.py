@@ -25,7 +25,7 @@ def get(urls: str, keywords: list):
             for product_children in product_parents:
                 name = product_children.find('h2', class_='product-item-meta__title').text.strip()
                 for keyword in keywords:
-                    if keyword in name:
+                    if keyword in name.lower():
                         product_id = product_children.find('h2', class_='product-item-meta__title').find('a').get('href').split('/')[-1]
 
                         p_url = f"https://www.jdsports.co.il/products/{product_id}".strip()

@@ -33,7 +33,7 @@ def get(url: list, keywords: list):
             p_url = f"https://www.factory54.co.il{product_children.find('a', class_='link tile-body__product-name').get('href')}"
             id = product_children.get('data-pid')
             for keyword in keywords:
-                if keyword in name:
+                if keyword in name.lower():
                     sec_content = requests.get(f"{factory_api}{id}").content
                     sizes = get_sizes(sec_content)
                     shoe = Shoe("factory_54", name, p_url, price, image, sizes)

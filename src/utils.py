@@ -1,5 +1,7 @@
 import json
 
+import requests
+
 
 def get_urls(site: str):
     urls = []
@@ -10,6 +12,7 @@ def get_urls(site: str):
 
     return urls
 
+
 def get_imgs(site: str):
     imgs = []
 
@@ -19,6 +22,7 @@ def get_imgs(site: str):
 
     return imgs
 
+
 def get_stored_sizes(site, url):
     with open("./data.json", 'r+') as file:
         file_data = json.load(file)
@@ -27,9 +31,25 @@ def get_stored_sizes(site, url):
                 return stored_shoe["sizes"]
 
 
+def remove_sold_out_shoe(json_file, shoe):
+    with open(json_file, 'r+') as file:
+        data = json.load(file)
+
+        for stored_shoe in data[shoe.site]:
+            if stored_shoe["url"] == shoe.url and stored_shoe["name"] == shoe.name and stored_shoe["price"] == shoe.price and stored_shoe["img"] == shoe.img:
+                data[shoe.site].remove(stored_shoe)
+                break
+
+        file.seek(0)
+        json.dump(data, file, indent=4)
+        file.truncate()
+
 
 def check_for_updates(sizes, stored_sizes, shoe):
-    if len(sizes) > len(stored_sizes):
+    if requests.get(shoe.url).status_code == 404:
+        remove_sold_out_shoe("./data.json", shoe)
+
+    elif len(sizes) > len(stored_sizes):
         added = [i for i in sizes if i not in stored_sizes]
         shoe.update_sizes(sizes)
         if len(stored_sizes) == 0:

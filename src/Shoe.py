@@ -50,7 +50,7 @@ class Shoe:
                         "thumbnail": {"url": f"{self.img}"},
 
                         "footer": {
-                            "text": "SneakMonitor by Ori Friedman",
+                            "text": "Sneaker Monitor by Dori Dadon",
                         },
                     }
                 ],

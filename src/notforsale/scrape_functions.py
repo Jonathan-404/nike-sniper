@@ -7,3 +7,4 @@ def get_sizes(product_soup):
             sizes.append(size.find('label').text)
 
     return sizes
+

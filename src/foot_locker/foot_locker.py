@@ -34,11 +34,6 @@ headers = {
 
 
 
-def get_captcha_cookie(site_url):
-    pass
-
-
-
 def scrape_details(product_url):
 
     response = requests.get(product_url, headers=headers).content

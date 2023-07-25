@@ -59,3 +59,4 @@ def get(link: str, keywords: list):
 
             if len(products) < ANCHOR_OFFSET:
                 break
+

@@ -1,7 +1,5 @@
 import json
 
-import requests
-
 
 def get_urls(site: str):
     urls = []
@@ -12,7 +10,6 @@ def get_urls(site: str):
 
     return urls
 
-
 def get_imgs(site: str):
     imgs = []
 
@@ -21,7 +18,6 @@ def get_imgs(site: str):
         imgs.append(product["img"])
 
     return imgs
-
 
 def get_stored_sizes(site, url):
     with open("./data.json", 'r+') as file:
@@ -33,7 +29,6 @@ def get_stored_sizes(site, url):
 
 
 def check_for_updates(sizes, stored_sizes, shoe):
-
     if len(sizes) > len(stored_sizes):
         added = [i for i in sizes if i not in stored_sizes]
         shoe.update_sizes(sizes)

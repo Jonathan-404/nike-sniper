@@ -10,12 +10,12 @@ discord_webhooks = {
     'terminal_x': ["https://discord.com/api/webhooks/1118997236379033741/R-CpIkUt5STjdyV9VKJ_f7HS0yYoMI8QGV2bxVRb8udxkdNqRab82qhbicF5hu0Fww4E"],
     'notforsale': ["https://discord.com/api/webhooks/1118998803270348811/ZREryxDXIVdAGrguDDwXhNesPzYLToZ34cO78MrNZH6pDL1bTOHg_twoZysujYXxeX7j"],
     'factory_54': ["https://discord.com/api/webhooks/1118998154201809068/zzCUlpkjldJ2CKH8AekCdcbl7_VqkwfSZ66vUkZdjoJNK7jtytr1jOGaLSxwZgbD9iha"],
-    'adidas': ['https://discord.com/api/webhooks/1128991479994523668/CqjfHMa0CrdweyGhZsHif9VkqvQhppBJR7XVgQmjGJ8lLwgi9l5KIxJXkhya2FsSX0hJ']
+    'adidas': ['https://discord.com/api/webhooks/1128991479994523668/CqjfHMa0CrdweyGhZsHif9VkqvQhppBJR7XVgQmjGJ8lLwgi9l5KIxJXkhya2FsSX0hJ'],
+    'footlocker': ["https://discord.com/api/webhooks/1118997510246117416/VlzIxkBBWiX_bZmDbWQdtz-sqxWSl3U5T8U-YgUs8qXyOA-nISFKftzMerkBPJKqfwFw"]
 }
 
 
 
 # keywords to look for (list)
-keywords = ['yeezy', 'jordan', 'dunk', 'sb', 'campus', 'supreme', 'foam', 'off white']
-
+keywords = ['yeezy', 'jordan', 'dunk', 'sb', 'campus', 'supreme', 'foam', 'off white', 'puma', 'new balance', 'converse', 'balenciaga', 'amiri', 'air force', 'air max', 'craft']
 

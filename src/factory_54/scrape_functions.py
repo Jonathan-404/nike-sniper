@@ -10,3 +10,4 @@ def get_sizes(product_content):
 
     return sizes
 
+

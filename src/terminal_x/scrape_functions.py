@@ -13,3 +13,4 @@ def get_sizes(product_soup):
         if size.get('data-test-id') == "qa-size-item":
             sizes.append(size.text.strip())
     return sizes
+

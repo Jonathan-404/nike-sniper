@@ -10,3 +10,4 @@ def get_sizes(product_soup):
         sizes.append(size.text.strip())
 
     return sizes
+

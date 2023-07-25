@@ -57,3 +57,4 @@ def get(url: str, keywords: list):
                             check_for_updates(sizes, get_stored_sizes(shoe.site, shoe.url), shoe)
     except Exception:
         pass
+

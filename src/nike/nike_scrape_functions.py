@@ -14,3 +14,4 @@ def scrape_sizes(product_url):
     product_sizes = sorted(product_sizes, key=lambda x: float(x))
 
     return product_sizes
+

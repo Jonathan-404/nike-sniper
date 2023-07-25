@@ -59,7 +59,3 @@ def get(url: str, keywords: list):
 
         offset += 24
 
-
-
-
-

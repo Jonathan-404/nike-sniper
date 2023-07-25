@@ -15,6 +15,7 @@ SITE NAME: Factory 54
 
 factory_api = "https://www.factory54.co.il/on/demandware.store/Sites-factory54-Site/iw_IL/Product-Variation?pid="
 
+
 def get(url: list, keywords: list):
 
     start_param = 0

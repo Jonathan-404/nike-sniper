@@ -32,3 +32,4 @@ def get_sizes(product_soup):
 
     return sizes
 
+
